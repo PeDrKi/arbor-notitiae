@@ -220,7 +220,7 @@ body.ro .lr [data-k="a"],body.ro #drw,body.ro #nf,body.ro #msm,body.ro #trb,body
 <script>
 const W=64,GX=210,GY=120,PAL=['#1f8a7a','#5b5fc7','#b9831a','#b8436b','#2f7fc1','#7a9a2e'];const PAL2=PAL.concat(['#d9534f','#e08e0b','#8e44ad','#16a085','#34495e','#8a9aa0']);
 const $=s=>document.querySelector(s),cv=$('#cv'),wd=$('#w'),nd=$('#nd'),es=$('#e'),pn=$('#pn');
-let API=null,ver=0,lock=false,busy=false,again=false,qw=false,RO=false,TID='main',TL=[],LK=[],DW=[],drRef=null,drN=-1,dmode=false,dw=null,lkFrom=null,lmode=false,lex=new Set(),fy=0,zl=0,zt=null,anim=0,pend=null,shown=null,L=3,ms=new Set(),msOn=false,T=[],dlA=null,N={},sel=null,V={x:80,y:window.innerHeight/2,k:1},uid=1,hits=null;
+let API=null,ver=0,lock=false,busy=false,again=false,qw=false,RO=false,TID='main',TL=[],LK=[],DW=[],drRef=null,drN=-1,dmode=false,dw=null,fitLater=false,lkFrom=null,lmode=false,lex=new Set(),fy=0,zl=0,zt=null,anim=0,pend=null,shown=null,L=3,ms=new Set(),msOn=false,T=[],dlA=null,N={},sel=null,V={x:80,y:window.innerHeight/2,k:1},uid=1,hits=null;
 const mk=(t,b,p,col)=>{const id='n'+uid+++'_'+Math.random().toString(36).slice(2,6);   // đuôi ngẫu nhiên để hai thiết bị không tạo trùng id
 N[id]={id,t,b,p,c:[],x:0,y:0,col,fold:0,cr:Date.now(),md:Date.now()};if(p)N[p].c.push(id);return id};
 function seed(){N={};uid=1;const r=mk('Bộ não thứ hai','Gốc của mọi tri thức. Bấm + để thêm nhánh.',null,null);
@@ -281,8 +281,9 @@ function rescue(id){const dead=new Set(desc(id));let n=0,again=true;
 function del(id){if(!N[id]||!N[id].p)return;const kept=rescue(id),p=N[N[id].p],ids=desc(id),nodes={};ids.forEach(i=>nodes[i]=N[i]);const e={tid:'t'+Date.now(),at:Date.now(),id,idx:p.c.indexOf(id),par:p.id,nodes,lk:LK.filter(l=>ids.includes(l.a)||ids.includes(l.b))};LK=LK.filter(l=>!ids.includes(l.a)&&!ids.includes(l.b));ids.forEach(i=>delete N[i]);p.c=p.c.filter(c=>c!=id);const full=trashPush(e);sel=p.id;render();undoBar(e);if(kept||full)flash((kept?kept+' note dùng chung được giữ lại ở nhánh khác của chúng. ':'')+(full?TFULL:''),6000)}
 const TFULL='Thùng rác đã đủ 30 mục nên mục cũ nhất vừa bị xoá hẳn.';
 function trashPush(e){T.unshift(e);if(T.length<=30)return false;T=T.slice(0,30);return true}
-function fit(now){const v=vis().map(i=>{const q=pend&&pend[i];return q?{x:q[0],y:q[1]}:N[i]});const x0=Math.min(...v.map(n=>n.x)),x1=Math.max(...v.map(n=>n.x+W)),y0=Math.min(...v.map(n=>n.y)),y1=Math.max(...v.map(n=>n.y+80));
-  const SB=lmode?Math.min(300,innerWidth*.86):0,w=innerWidth-SB,h=innerHeight,k=Math.min(1.2,(w-120)/(x1-x0),(h-200)/(y1-y0));fly(SB+(w-(x1-x0)*k)/2-x0*k,(h-(y1-y0)*k)/2-y0*k+20,k,now?0:undefined)}
+function fit(now){if(innerWidth<50||innerHeight<50){fitLater=true;return}      // cửa sổ chưa có kích thước (tab mở ngầm, cửa sổ thu nhỏ): chờ tới khi có rồi mới căn
+ const v=vis().map(i=>{const q=pend&&pend[i];return q?{x:q[0],y:q[1]}:N[i]});const x0=Math.min(...v.map(n=>n.x)),x1=Math.max(...v.map(n=>n.x+W)),y0=Math.min(...v.map(n=>n.y)),y1=Math.max(...v.map(n=>n.y+80));
+  const SB=lmode?Math.min(300,innerWidth*.86):0,w=innerWidth-SB,h=innerHeight,k=Math.max(.15,Math.min(1.2,(w-120)/(x1-x0),(h-200)/(y1-y0)));fly(SB+(w-(x1-x0)*k)/2-x0*k,(h-(y1-y0)*k)/2-y0*k+20,k,now?0:undefined)}
 let drag=null;
 cv.addEventListener('pointerdown',e=>{snap();if(tpDown(e))return;if(dmode){if(!dw)drawStart(e);return}const t=e.target.closest('[data-a]'),n=e.target.closest('.n');if(lkFrom){if(n&&n.dataset.id!=lkFrom)addLink(lkFrom,n.dataset.id);else if(!n){lkFrom=null;lkBar()}return}
   if(t){const id=t.closest('.n').dataset.id;if(t.dataset.a=='a')add(id);else{toggleFold(id)}return}
@@ -994,6 +995,7 @@ addEventListener('storage',e=>{if(API||RO||!e.newValue)return;
  try{const d=JSON.parse(e.newValue),v=V,o=ov.classList.contains('on')&&sel;loadState(d);V=v;xf();if(o){if(N[o])openDoc(o);else closeDoc()}clearTimeout(st)}catch(x){}});
 document.querySelectorAll('#cfm>div,#tr>div,#tm>div,#nlp>div,#dgd>div,#hp>div,#au>div').forEach(e=>{e.setAttribute('role','dialog');e.setAttribute('aria-modal','true')});
 cv.addEventListener('mouseleave',()=>tip.style.display='none');
+addEventListener('resize',()=>{if(fitLater&&innerWidth>=50&&innerHeight>=50){fitLater=false;fit(1)}});
 </script>
 </body>
 </html>
