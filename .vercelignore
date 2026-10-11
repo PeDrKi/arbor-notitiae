@@ -1,0 +1,5 @@
+backup-*/
+tests/
+supabase.sql
+README.md
+.gitignore
