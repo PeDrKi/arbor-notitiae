@@ -1544,12 +1544,12 @@ addEventListener('resize',()=>{WS.forEach(w=>{if(!w.max){wClamp(w);wApply(w)}})}
  const hv=()=>matchMedia('(hover:hover)').matches;
  function ap(){pn.classList.toggle('mini',mini);mn.textContent=mini?'▢':'—';mn.title=mini?'Mở rộng bảng':'Thu nhỏ bảng';mn.setAttribute('aria-label',mn.title);if(typeof pplace=='function')pplace()}
  function arm(d){clearTimeout(tm);if(mini||!hv())return;tm=setTimeout(()=>{if(!pn.classList.contains('on')||pn.matches(':hover')||pn.contains(document.activeElement)&&/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName))return;pn.classList.add('auto')},d)}
- const wake=()=>{clearTimeout(tm);pn.classList.remove('auto')};
+ const wake=()=>{clearTimeout(tm);if(pn.classList.contains('auto'))pn.classList.remove('auto')};
  mn.onclick=()=>{mini=!mini;try{localStorage.setItem(K,mini?'1':'0')}catch(e){}wake();ap()};
  tg.forEach(([t,b])=>{$(t).onclick=()=>{const o=$(b).hidden;$(b).hidden=!o;$(t).setAttribute('aria-expanded',o);if(typeof pplace=='function')pplace()}});
  pn.addEventListener('pointerenter',wake);pn.addEventListener('focusin',wake);pn.addEventListener('pointerleave',()=>arm(1200));
  pn.addEventListener('pointerdown',()=>{if(pn.classList.contains('auto')){wake()}});
- new MutationObserver(()=>{if(!pn.classList.contains('on')){wake();last=null}}).observe(pn,{attributes:true,attributeFilter:['class']});
+ let wasOn=false;new MutationObserver(()=>{const on=pn.classList.contains('on');if(on==wasOn)return;wasOn=on;if(!on){wake();last=null}}).observe(pn,{attributes:true,attributeFilter:['class']});
  window.pnSync=()=>{if(sel&&N[sel]){$('#pdot').style.setProperty('--c',col(sel));if(sel!==last){last=sel;wake();arm(3500)}}};
  ap()})();
 addEventListener('pagehide',()=>{if(API)saveDraft();else if(!RO&&TID){try{localStorage.setItem(lsKey(),JSON.stringify(snapState()))}catch(x){}}});
