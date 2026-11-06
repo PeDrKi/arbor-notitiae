@@ -65,6 +65,12 @@ Thử với cây 800 note: đổi tên một note chỉ gửi khoảng 0,6 KB th
 - Khi xoá note hoặc xoá một cây, ảnh của chúng vẫn nằm trong kho. Bấm "Dọn ảnh không dùng…" ở cuối danh sách cây để xoá các ảnh đã tải lên quá 1 ngày mà không note nào (kể cả trong thùng rác) còn dùng.
 - Cập nhật `supabase.sql` đã đổi cấu trúc bảng `trees`; nếu đã chạy bản cũ, xem ghi chú ở đầu file SQL.
 
+## Thanh menu
+Thanh trên cùng gồm các nhóm nút thường dùng; Sao lưu, Khôi phục, Thùng rác, Phím tắt, Đăng xuất nằm trong "☰ Menu" ở góc phải.
+
+## Bảng note
+Bấm một note để mở bảng gọn: sửa tiêu đề/tóm tắt, "⋯ Thao tác" (nối, chuyển, tách…), "Kiểu" (màu, hình, cỡ). Nút "—" hoặc rê chuột ra ngoài sẽ thu bảng thành thanh tiêu đề.
+
 ## Cách hoạt động
 - Mở trang: nếu chưa cấu hình URL/khoá, trang chạy chế độ chỉ lưu trên máy như trước.
 - Đăng nhập: tải cây từ bảng `trees`. Tài khoản mới sẽ nhận cây đang có trên máy.
