@@ -193,7 +193,7 @@ body.mvg,body.mvg *{cursor:grabbing!important}#pg img,#pg figure.dg{cursor:point
 #pn.mini #pbd,#pn.auto #pbd{display:none}#pn.mini,#pn.auto{padding:8px 10px;gap:0}
 #pmo[hidden],#pst[hidden]{display:none}.pxt{padding:8px;background:var(--card);border:1px solid var(--bd);border-radius:10px}
 #ptg .pill[aria-expanded=true]{background:var(--ink);color:var(--bg)}#pdot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c,#888);margin-right:6px;vertical-align:-1px}
-#pst .sw{width:20px;height:20px}#pn .pill{padding:6px 11px;font-size:13px}#pn .acts{gap:6px}#lks:empty{display:none}.pq{display:grid;grid-template-columns:1fr 1fr;gap:6px}.pq .pill{display:flex;align-items:center;justify-content:center;gap:6px;margin:0;white-space:nowrap}.pq .del{border-color:color-mix(in srgb,#b3402f 45%,var(--bd))}.ic{flex:none}#pn #pbd{gap:8px}body.ro #pmo-t,body.ro #pst-t{display:none}
+#pst .sw{width:20px;height:20px}#pn .pill{padding:6px 11px;font-size:13px}#pn .acts{gap:6px}#lks:empty{display:none}.pq{display:flex;flex-wrap:wrap;gap:6px}.pq .pill{display:flex;align-items:center;justify-content:center;gap:0;margin:0;white-space:nowrap;flex:1 1 36px;min-width:36px;height:34px;padding:0 10px;overflow:hidden;transition:flex-basis .28s ease,gap .28s ease,background .15s}.pq .pill span{display:inline-block;max-width:0;opacity:0;overflow:hidden;transition:max-width .28s ease,opacity .2s ease}.pq.open .pill{flex:1 1 calc(50% - 3px);gap:6px}.pq.open .pill span{max-width:130px;opacity:1}@media (prefers-reduced-motion:reduce){.pq .pill,.pq .pill span{transition:none}}.pq .del{border-color:color-mix(in srgb,#b3402f 45%,var(--bd))}.ic{flex:none}#pn #pbd{gap:8px}body.ro #pmo-t,body.ro #pst-t{display:none}
 .acts{display:flex;gap:6px;flex-wrap:wrap}
 @media (max-width:640px){#pn{left:12px!important;right:12px;top:auto!important;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:auto}}
 #cfm{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:rgba(0,0,0,.45)}#cfm.on{display:grid}
@@ -1552,6 +1552,12 @@ addEventListener('resize',()=>{WS.forEach(w=>{if(!w.max){wClamp(w);wApply(w)}})}
  let wasOn=false;new MutationObserver(()=>{const on=pn.classList.contains('on');if(on==wasOn)return;wasOn=on;if(!on){wake();last=null}}).observe(pn,{attributes:true,attributeFilter:['class']});
  window.pnSync=()=>{if(sel&&N[sel]){$('#pdot').style.setProperty('--c',col(sel));if(sel!==last){last=sel;wake();arm(3500)}}};
  ap()})();
+
+(function(){const q=document.querySelector('.pq');if(!q)return;let t=0;
+ const openQ=()=>{q.classList.add('open');clearTimeout(t);t=setTimeout(()=>q.classList.remove('open'),45000)};
+ q.addEventListener('pointerover',()=>{if(!q.classList.contains('open'))openQ()});q.addEventListener('focusin',()=>{if(!q.classList.contains('open'))openQ()});
+ q.querySelectorAll('.pill').forEach(b=>{if(!b.title)b.title=b.textContent.trim()});
+})();
 addEventListener('pagehide',()=>{if(API)saveDraft();else if(!RO&&TID){try{localStorage.setItem(lsKey(),JSON.stringify(snapState()))}catch(x){}}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&API&&!RO){saveView();doPush()}});
 // Đóng tab khi còn thay đổi chưa lên máy chủ: gửi ngay và để trình duyệt hỏi lại người dùng
