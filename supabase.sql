@@ -146,3 +146,95 @@ end $$;
 drop trigger if exists trees_limit on public.trees;
 create trigger trees_limit before insert on public.trees
   for each row execute function public.trees_limit();
+
+-- 8) Thiết bị đã đăng nhập: xem danh sách, xem thiết bị nào đang hoạt động, đăng xuất từ xa.
+--    Mỗi trình duyệt/thiết bị tự báo "tôi còn hoạt động" (touch_device) khoảng mỗi phút khi đang mở.
+--    revoke_device xoá phiên đăng nhập (auth.sessions) của thiết bị đó, nên nó không làm mới được token nữa và bị đăng xuất.
+create table if not exists public.devices (
+  id         uuid primary key,                                   -- do trình duyệt tự sinh, lưu trong localStorage
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  session_id uuid,                                               -- phiên đăng nhập hiện tại của thiết bị (claim session_id trong JWT)
+  name       text not null default '',
+  ua         text not null default '',
+  created_at timestamptz not null default now(),
+  last_seen  timestamptz not null default now(),
+  revoked_at timestamptz
+);
+create index if not exists devices_user_idx on public.devices (user_id, last_seen desc);
+alter table public.devices enable row level security;           -- không có policy: chỉ truy cập qua các hàm bên dưới
+
+-- Thiết bị gọi định kỳ. Trả 'ok', hoặc 'revoked' nếu thiết bị này đã bị đăng xuất từ xa (khi đó phải tự đăng xuất).
+create or replace function public.touch_device(p_id uuid, p_name text, p_ua text)
+returns text
+language plpgsql security definer set search_path = public
+as $$
+declare
+  uid uuid := auth.uid();
+  sid uuid := nullif(auth.jwt() ->> 'session_id', '')::uuid;
+  d public.devices;
+begin
+  if uid is null then raise exception 'not_authenticated'; end if;
+  select * into d from public.devices where id = p_id;
+  if found and d.user_id <> uid then raise exception 'forbidden'; end if;
+  if found and d.revoked_at is not null and d.session_id is not distinct from sid then
+    return 'revoked';                                              -- vẫn là phiên cũ đã bị thu hồi
+  end if;
+  insert into public.devices (id, user_id, session_id, name, ua, last_seen, revoked_at)
+  values (p_id, uid, sid, left(coalesce(p_name, ''), 80), left(coalesce(p_ua, ''), 300), now(), null)
+  on conflict (id) do update
+    set session_id = excluded.session_id, name = excluded.name, ua = excluded.ua, last_seen = now(), revoked_at = null;
+  return 'ok';
+end $$;
+
+-- Danh sách thiết bị của tôi (chưa bị đăng xuất). online = có tín hiệu trong 3 phút gần nhất.
+create or replace function public.list_devices()
+returns table (id uuid, name text, created_at timestamptz, last_seen timestamptz, online boolean)
+language sql stable security definer set search_path = public
+as $$
+  select d.id, d.name, d.created_at, d.last_seen, d.last_seen > now() - interval '3 minutes'
+  from public.devices d
+  where d.user_id = auth.uid() and d.revoked_at is null
+  order by d.last_seen desc
+$$;
+
+-- Đăng xuất một thiết bị từ xa.
+create or replace function public.revoke_device(p_id uuid)
+returns boolean
+language plpgsql security definer set search_path = public
+as $$
+declare d public.devices;
+begin
+  select * into d from public.devices where id = p_id and user_id = auth.uid();
+  if not found then return false; end if;
+  update public.devices set revoked_at = now() where id = p_id;
+  if d.session_id is not null then
+    delete from auth.sessions where id = d.session_id and user_id = auth.uid();   -- kéo theo refresh_tokens của phiên đó
+  end if;
+  return true;
+end $$;
+
+-- Đăng xuất mọi thiết bị khác, chỉ giữ thiết bị hiện tại.
+create or replace function public.revoke_other_devices(p_keep uuid)
+returns integer
+language plpgsql security definer set search_path = public
+as $$
+declare n integer := 0; r record;
+begin
+  for r in select id, session_id from public.devices where user_id = auth.uid() and id <> p_keep and revoked_at is null loop
+    update public.devices set revoked_at = now() where id = r.id;
+    if r.session_id is not null then delete from auth.sessions where id = r.session_id and user_id = auth.uid(); end if;
+    n := n + 1;
+  end loop;
+  return n;
+end $$;
+
+-- Khi tự đăng xuất bình thường: bỏ thiết bị này khỏi danh sách.
+create or replace function public.forget_device(p_id uuid)
+returns void
+language sql security definer set search_path = public
+as $$ delete from public.devices where id = p_id and user_id = auth.uid() $$;
+
+revoke all on function public.touch_device(uuid, text, text), public.list_devices(), public.revoke_device(uuid),
+  public.revoke_other_devices(uuid), public.forget_device(uuid) from public, anon;
+grant execute on function public.touch_device(uuid, text, text), public.list_devices(), public.revoke_device(uuid),
+  public.revoke_other_devices(uuid), public.forget_device(uuid) to authenticated;

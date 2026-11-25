@@ -1,9 +1,12 @@
-// Kiểm thử nhanh cho hai hàm xử lý dữ liệu trong index.html: sanitizeState (làm sạch dữ liệu nạp vào) và merge3 (gộp khi xung đột).
+// Kiểm thử nhanh cho hai hàm xử lý dữ liệu trong thư mục js/: sanitizeState (làm sạch dữ liệu nạp vào) và merge3 (gộp khi xung đột).
 // Chạy: node tests/kiem-thu.js   (cần Node.js; không cần cài thêm gì)
 const fs = require('fs'), path = require('path'), assert = require('assert');
-const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+// app.js (bản ghép chạy trong trình duyệt) phải khớp các file nguồn trong js/
+require('child_process').execFileSync(process.execPath, [path.join(__dirname, '..', 'build.js'), '--check'], { stdio: 'inherit' });
+const jsDir = path.join(__dirname, '..', 'js');
+const html = fs.readdirSync(jsDir).filter(f => f.endsWith('.js')).sort().map(f => fs.readFileSync(path.join(jsDir, f), 'utf8')).join('\n');
 const a = html.indexOf('const OKB='), b = html.indexOf('// Vị trí khung nhìn');
-assert(a > 0 && b > a, 'Không tìm thấy đoạn mã cần kiểm thử trong index.html');
+assert(a > 0 && b > a, 'Không tìm thấy đoạn mã cần kiểm thử trong thư mục js/');
 // clean() cần trình duyệt, nên ở đây thay bằng bản giả chỉ đánh dấu là đã đi qua
 const app = new Function('clean', 'let N={},SNAP={n:{},t:{}},LK=[],T=[],DW=[],uid=1,L=3;' + html.slice(a, b) +
   ';return{sanitizeState,merge3,set(s){N=s.N;LK=s.LK;T=s.T;DW=s.DW||[];uid=s.uid;L=s.lv||3},snap(s){SNAP={n:{},t:{LK:JSON.stringify(s.LK),DW:JSON.stringify(s.DW||[]),T:JSON.stringify(s.T),lv:JSON.stringify(s.lv)}};for(const i in s.N)SNAP.n[i]=JSON.stringify(s.N[i])}}')(h => '[sạch]' + h);

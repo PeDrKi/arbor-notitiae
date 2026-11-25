@@ -80,6 +80,16 @@ Bảng note → "⋯ Thao tác" → "🔒 Đặt mật khẩu". Nội dung đư�
 ## Giữ Supabase không bị pause
 Đẩy thư mục `.github/` lên GitHub: workflow `Giữ Supabase hoạt động` tự gọi Supabase mỗi 3 ngày (tab Actions để xem hoặc chạy tay). Không cần cấu hình thêm vì dùng key công khai sẵn có.
 
+## Cấu trúc mã nguồn
+- `index.html`: khung trang; `css/app.css`: giao diện; `js/*.js`: mã nguồn theo chức năng (đọc/sửa ở đây); `app.js`: bản ghép chạy trong trình duyệt.
+- **Sau khi sửa file trong `js/` hãy chạy `node build.js`** để tạo lại `app.js` rồi mới đẩy lên GitHub. `node tests/kiem-thu.js` sẽ báo nếu `app.js` chưa khớp.
+
+## Thiết bị đăng nhập
+☰ Menu → "Thiết bị đăng nhập" để xem các thiết bị đang dùng tài khoản và đăng xuất từ xa. Cần chạy phần 8 của `supabase.sql` một lần trên Supabase.
+
+## Khoá cả nhánh
+Bảng note → "⋯ Thao tác" → "🔒 Khoá cả nhánh": cùng một mật khẩu và một mã khôi phục cho mọi note trong nhánh.
+
 ## Cách hoạt động
 - Mở trang: nếu chưa cấu hình URL/khoá, trang chạy chế độ chỉ lưu trên máy như trước.
 - Đăng nhập: tải cây từ bảng `trees`. Tài khoản mới sẽ nhận cây đang có trên máy.

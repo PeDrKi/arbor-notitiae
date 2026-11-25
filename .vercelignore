@@ -4,3 +4,5 @@ supabase.sql
 README.md
 .gitignore
 .github/
+js/
+build.js
