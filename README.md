@@ -71,6 +71,15 @@ Thanh trên cùng gồm các nhóm nút thường dùng; Sao lưu, Khôi phục,
 ## Bảng note
 Bấm một note để mở bảng gọn: sửa tiêu đề/tóm tắt, "⋯ Thao tác" (nối, chuyển, tách…), "Kiểu" (màu, hình, cỡ). Nút "—" hoặc rê chuột ra ngoài sẽ thu bảng thành thanh tiêu đề.
 
+## Khoá note bằng mật khẩu
+Bảng note → "⋯ Thao tác" → "🔒 Đặt mật khẩu". Nội dung được mã hoá AES-256 trên máy trước khi lưu hay đồng bộ; chỉ tiêu đề còn rõ, tóm tắt và ngày hiện `***`. Mở trang phải nhập mật khẩu, đóng trang là khoá lại. Hãy cất kỹ **mã khôi phục** hiện lúc khoá: quên mật khẩu thì dùng mã này ("Quên mật khẩu?") để đặt mật khẩu mới; mất cả hai thì không thể lấy lại nội dung.
+
+## Kho (cất note)
+"⋯ Thao tác" → "📦 Cất vào kho" để ẩn note (hoặc cả nhánh) khỏi cây; mở nút "Kho" trên thanh trên cùng để tìm, "Lấy ra" hoặc xoá hẳn. Khác thùng rác, kho giữ vô thời hạn.
+
+## Giữ Supabase không bị pause
+Đẩy thư mục `.github/` lên GitHub: workflow `Giữ Supabase hoạt động` tự gọi Supabase mỗi 3 ngày (tab Actions để xem hoặc chạy tay). Không cần cấu hình thêm vì dùng key công khai sẵn có.
+
 ## Cách hoạt động
 - Mở trang: nếu chưa cấu hình URL/khoá, trang chạy chế độ chỉ lưu trên máy như trước.
 - Đăng nhập: tải cây từ bảng `trees`. Tài khoản mới sẽ nhận cây đang có trên máy.

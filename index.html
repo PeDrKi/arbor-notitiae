@@ -193,7 +193,15 @@ body.mvg,body.mvg *{cursor:grabbing!important}#pg img,#pg figure.dg{cursor:point
 #pn.mini #pbd,#pn.auto #pbd{display:none}#pn.mini,#pn.auto{padding:8px 10px;gap:0}
 #pmo[hidden],#pst[hidden]{display:none}.pxt{padding:8px;background:var(--card);border:1px solid var(--bd);border-radius:10px}
 #ptg .pill[aria-expanded=true]{background:var(--ink);color:var(--bg)}#pdot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c,#888);margin-right:6px;vertical-align:-1px}
-#pst .sw{width:20px;height:20px}#pn .pill{padding:6px 11px;font-size:13px}#pn .acts{gap:6px}#lks:empty{display:none}.pq{display:flex;flex-wrap:wrap;gap:6px}.pq .pill{display:flex;align-items:center;justify-content:center;gap:0;margin:0;white-space:nowrap;flex:1 1 36px;min-width:36px;height:34px;padding:0 10px;overflow:hidden;transition:flex-basis .28s ease,gap .28s ease,background .15s}.pq .pill span{display:inline-block;max-width:0;opacity:0;overflow:hidden;transition:max-width .28s ease,opacity .2s ease}.pq.open .pill{flex:1 1 calc(50% - 3px);gap:6px}.pq.open .pill span{max-width:130px;opacity:1}@media (prefers-reduced-motion:reduce){.pq .pill,.pq .pill span{transition:none}}.pq .del{border-color:color-mix(in srgb,#b3402f 45%,var(--bd))}.ic{flex:none}#pn #pbd{gap:8px}body.ro #pmo-t,body.ro #pst-t{display:none}
+#pst .sw{width:20px;height:20px}#pn .pill{padding:6px 11px;font-size:13px}#pn .acts{gap:6px}#lkd{position:fixed;inset:0;z-index:70;background:rgba(10,14,16,.55);display:flex;align-items:center;justify-content:center;padding:16px}#lkd[hidden]{display:none}
+.lkb{width:min(400px,100%);background:var(--panel);color:var(--ink);border:1px solid var(--bd);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:10px;max-height:calc(100vh - 32px);overflow:auto}
+.lkb h3{margin:0;font-size:17px}.lkb p{margin:0;color:var(--mute);font-size:13px;line-height:1.5}.lkb p:empty{display:none}#lkdf{display:flex;flex-direction:column;gap:8px}
+.lkl{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--mute)}.lkl input{padding:9px 11px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+.lkl input[readonly]{font-family:ui-monospace,monospace;letter-spacing:.06em;user-select:all}.lke{color:#c0412f;font-size:13px;min-height:0}.lke:empty{display:none}
+.lka{display:flex;gap:8px;justify-content:flex-end}.lky{background:var(--ink);color:var(--bg)}.lkx{display:flex;gap:12px;flex-wrap:wrap}.lkx:empty{display:none}
+.lkf{border:0;background:none;color:var(--mute);text-decoration:underline;cursor:pointer;font:inherit;font-size:13px;padding:2px 0}.lkf:hover{color:var(--ink)}
+.psp.lkm{padding:40px;text-align:center;color:var(--mute)}body.ro #lkset,body.ro #lkrm,body.ro #arpk{display:none}
+#lks:empty{display:none}#arq{padding:8px 11px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--ink);font:inherit;font-size:14px}.ti .row{flex:none}#spb[aria-pressed=false]{opacity:.7;text-decoration:line-through}.pq{display:flex;flex-wrap:wrap;gap:6px}.pq .pill{display:flex;align-items:center;justify-content:center;gap:0;margin:0;white-space:nowrap;flex:1 1 36px;min-width:36px;height:34px;padding:0 10px;overflow:hidden;transition:flex-basis .28s ease,gap .28s ease,background .15s}.pq .pill span{display:inline-block;max-width:0;opacity:0;overflow:hidden;transition:max-width .28s ease,opacity .2s ease}.pq.open .pill{flex:1 1 calc(50% - 3px);gap:6px}.pq.open .pill span{max-width:130px;opacity:1}@media (prefers-reduced-motion:reduce){.pq .pill,.pq .pill span{transition:none}}.pq .del{border-color:color-mix(in srgb,#b3402f 45%,var(--bd))}.ic{flex:none}#pn #pbd{gap:8px}body.ro #pmo-t,body.ro #pst-t{display:none}
 .acts{display:flex;gap:6px;flex-wrap:wrap}
 @media (max-width:640px){#pn{left:12px!important;right:12px;top:auto!important;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:auto}}
 #cfm{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:rgba(0,0,0,.45)}#cfm.on{display:grid}
@@ -202,10 +210,10 @@ body.mvg,body.mvg *{cursor:grabbing!important}#pg img,#pg figure.dg{cursor:point
 #cfk:disabled{opacity:.4;cursor:not-allowed}#cfk:not(:disabled){background:#b3402f;color:#fff;border-color:#b3402f}
 #ud{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:45;display:none;gap:12px;align-items:center;background:var(--ink);color:var(--bg);padding:8px 8px 8px 16px;border-radius:999px;max-width:92vw}
 #udb{background:var(--bg);color:var(--ink);border:0;border-radius:999px;padding:5px 12px;font:inherit;cursor:pointer}
-#tr{position:fixed;inset:0;z-index:40;display:none;place-items:center;background:rgba(0,0,0,.4)}#tr.on{display:grid}
-#trbx{width:min(480px,94vw);max-height:80vh;display:flex;flex-direction:column;gap:10px;background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:14px}
-.trh{display:flex;justify-content:space-between;align-items:center}#trx{border:0;background:none;color:var(--mute);font-size:22px;cursor:pointer}
-#trl{overflow-y:auto;display:flex;flex-direction:column;gap:6px}.ti{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card)}
+#tr,#ar{position:fixed;inset:0;z-index:40;display:none;place-items:center;background:rgba(0,0,0,.4)}#tr.on,#ar.on{display:grid}
+#trbx,#arbx{width:min(480px,94vw);max-height:80vh;display:flex;flex-direction:column;gap:10px;background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.trh{display:flex;justify-content:space-between;align-items:center}#trx,#arx{border:0;background:none;color:var(--mute);font-size:22px;cursor:pointer}
+#trl,#arl{overflow-y:auto;display:flex;flex-direction:column;gap:6px}.ti{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card)}
 .ti b{overflow-wrap:anywhere}.ti small{display:block;color:var(--mute)}.mu{color:var(--mute);margin:6px 0}
 .n.grp{box-shadow:0 0 0 3px var(--card),0 0 0 5px var(--c)}
 .n.grp.sel{box-shadow:0 0 0 3px var(--card),0 0 0 5px var(--c),0 0 0 10px color-mix(in srgb,var(--c) 30%,transparent)}
@@ -216,8 +224,8 @@ body.mvg,body.mvg *{cursor:grabbing!important}#pg img,#pg figure.dg{cursor:point
 .n{left:0;top:0;will-change:transform}
 @keyframes pop{from{opacity:0;scale:.35}to{opacity:1;scale:1}}@keyframes fin{from{opacity:0}to{opacity:1}}@keyframes pin{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
 .n.nw{animation:pop .45s cubic-bezier(.2,.8,.2,1) both}path.nw{animation:fin .6s ease both}
-#pn.on{animation:pin .2s ease-out}#cfm.on,#tr.on,#dgd.on,#ov.on,#msb{animation:fin .2s ease-out}
-@media (prefers-reduced-motion:reduce){.n.nw,path.nw,#pn.on,#cfm.on,#tr.on,#dgd.on,#ov.on{animation:none}}
+#pn.on{animation:pin .2s ease-out}#cfm.on,#tr.on,#ar.on,#dgd.on,#ov.on,#msb{animation:fin .2s ease-out}
+@media (prefers-reduced-motion:reduce){.n.nw,path.nw,#pn.on,#cfm.on,#tr.on,#ar.on,#dgd.on,#ov.on{animation:none}}
 #bar{z-index:5}
 #ls{position:fixed;left:0;top:0;bottom:0;width:min(300px,86vw);overflow:auto;background:var(--panel);border-right:1px solid var(--bd);display:none;z-index:4;padding-top:env(safe-area-inset-top,0px)}
 body.lm #ls{display:block}body.lm #bar{left:calc(min(300px,86vw) + 12px)}body.lm #hint{display:none}
@@ -273,7 +281,7 @@ body.ro .lr [data-k="a"],body.ro #drw,body.ro #nf,body.ro #msm,body.ro #trb,body
   <div class="bg bgl"><button class="pill" id="tmb" title="Chọn hoặc quản lý các cây">Cây ▾</button><span class="pill" id="rob" style="display:none;cursor:default">Bản chia sẻ · chỉ xem</span></div>
   <input id="q" class="pill" placeholder="Tìm trong note…" aria-label="Tìm trong tiêu đề và nội dung note" title="Enter: kết quả kế tiếp · Shift+Enter: kết quả trước">
   <div class="bg" role="group" aria-label="Xem và sắp xếp"><button class="pill" id="fit" title="Thu phóng để thấy toàn bộ cây">Xem toàn bộ</button><button class="pill" id="lay" title="Tự xếp lại vị trí các note">Sắp xếp lại</button><button class="pill" id="fcb" aria-pressed="false" title="Tập trung vào nhánh đang chọn: note vào giữa, con toả tròn, phần còn lại mờ đi (phím F · Ctrl+Shift+chuột phải vào note)">Tập trung</button><select class="pill" id="lv" aria-label="Số cấp hiển thị" title="Số cấp hiển thị"><option value="2">2 cấp</option><option value="3" selected>3 cấp</option><option value="4">4 cấp</option><option value="5">5 cấp</option><option value="99">Tất cả cấp</option></select></div>
-  <div class="bg" role="group" aria-label="Công cụ"><button class="pill" id="msm" title="Chọn nhiều note để gom nhóm">Chọn nhiều</button><button class="pill" id="drw" title="Vẽ tự do lên sơ đồ bằng chuột hoặc ngón tay (phím D)">Vẽ</button><button class="pill" id="nf" title="Tạo note độc lập (phím I, hoặc bấm đúp vào chỗ trống)">+ Note độc lập</button><button class="pill" id="vw" title="Hiện hoặc ẩn danh sách phân cấp ở bên trái">Danh sách</button></div>
+  <div class="bg" role="group" aria-label="Công cụ"><button class="pill" id="msm" title="Chọn nhiều note để gom nhóm">Chọn nhiều</button><button class="pill" id="drw" title="Vẽ tự do lên sơ đồ bằng chuột hoặc ngón tay (phím D)">Vẽ</button><button class="pill" id="nf" title="Tạo note độc lập (phím I, hoặc bấm đúp vào chỗ trống)">+ Note độc lập</button><button class="pill" id="vw" title="Hiện hoặc ẩn danh sách phân cấp ở bên trái">Danh sách</button><button class="pill" id="arb" title="Kho: những note đã cất đi, không hiện trên cây">Kho</button></div>
   <div class="bgr"><span id="sy2" style="display:none;color:var(--mute);font-size:12px"></span>
    <div id="mnw"><button class="pill" id="mnb" aria-haspopup="true" aria-expanded="false" title="Tài khoản, sao lưu, phím tắt…">☰ Menu</button>
     <div id="acm" role="menu" hidden><button class="pill" id="usr" style="display:none" title="Tài khoản đang đăng nhập" tabindex="-1"></button>
@@ -281,11 +289,11 @@ body.ro .lr [data-k="a"],body.ro #drw,body.ro #nf,body.ro #msm,body.ro #trb,body
      <div id="hint">Rê chuột xem tóm tắt · bấm 1 lần mở menu · bấm đúp mở trang · kéo note thả lên note khác để chuyển nhánh</div></div></div></div>
 </div>
 <div id="cfm"><div id="cfb"><b>Xác nhận xoá nhánh</b><p id="cfp"></p><input id="cfi" placeholder="Gõ DELETE" autocomplete="off" aria-label="Gõ DELETE để xác nhận"><div class="row"><button class="pill" id="cfk" disabled>Xoá vĩnh viễn</button><button class="pill" id="cfn">Huỷ</button></div></div></div><div id="ud"><span id="uds"></span><button id="udb">Hoàn tác</button></div>
-<div id="tr"><div id="trbx"><div class="trh"><b>Thùng rác</b><small class="mu" style="margin-right:auto;margin-left:10px">tự xoá sau 30 ngày</small><button id="trx" aria-label="Đóng">×</button></div><div id="trl"></div><div class="row"><button class="pill sm" id="trp">Dọn sạch thùng rác</button></div></div></div><div id="msb"><span id="msn"></span><button class="pill sm" id="msg">Gom nhóm</button><button class="pill sm" id="msc">Bỏ chọn</button><button class="pill sm" id="msx">Xong</button></div><div id="dwb"><button class="pill sm" id="dwp">Bút</button><button class="pill sm" id="dwh" title="Nét to, trong suốt để tô nổi bật">Dạ quang</button><button class="pill sm" id="dwe" title="Rê qua nét vẽ để xoá nét đó">Tẩy</button><button class="pill sm" id="dwl" style="display:none" title="Bật: nét vẽ mới nằm dưới chữ. Tắt: nét vẽ mới đè lên chữ">Dưới chữ</button><span id="dwc" class="row"></span><select id="dww" class="pill sm" aria-label="Độ dày nét"><option value="2">Mảnh</option><option value="4" selected>Vừa</option><option value="8">Dày</option></select><button class="pill sm" id="dwu" title="Hoàn tác nét (Ctrl+Z)" aria-label="Hoàn tác nét">↶</button><button class="pill sm" id="dwr" title="Làm lại nét (Ctrl+Y)" aria-label="Làm lại nét">↷</button><button class="pill sm" id="dwa">Xoá hết</button><button class="pill sm" id="dwx">Xong</button></div><div id="rb"></div><div id="hp"><div id="hpb2"><div class="trh"><b>Phím tắt</b><button id="hpx" aria-label="Đóng">×</button></div><div id="hph"></div><div id="hpl"></div></div></div><div id="au"><div id="aub"><b id="aut">Đăng nhập</b><small class="mu">Đăng nhập để lưu cây tri thức trên máy chủ và dùng ở mọi thiết bị.</small><input id="aue" type="email" placeholder="Email" autocomplete="username" aria-label="Email"><input id="aup" type="password" placeholder="Mật khẩu (từ 8 ký tự)" autocomplete="current-password" aria-label="Mật khẩu"><small id="aur" style="color:#b3402f"></small><div class="row"><button class="pill" id="aug">Đăng nhập</button><button class="pill sm" id="auf">Quên mật khẩu?</button><button class="pill sm" id="aus">Chưa có tài khoản? Đăng ký</button></div><button class="pill" id="agg" style="width:100%"><b style="color:#4285f4">G</b> Tiếp tục với Google</button><button class="pill sm" id="aul" style="align-self:flex-start">Dùng không cần tài khoản (chỉ lưu trên máy này)</button></div></div><div id="lkn"><span id="lkt"></span><button class="pill sm" id="lkx">Huỷ</button></div><div id="nlp"><div class="mbx"><b>Liên kết tới note</b><input id="nlq" placeholder="Tìm trong note…" aria-label="Tìm trong tiêu đề và nội dung note" title="Enter: kết quả kế tiếp · Shift+Enter: kết quả trước"><div id="nll"></div><div class="row"><button class="pill sm" id="nlx">Đóng</button></div></div></div>
+<div id="tr"><div id="trbx"><div class="trh"><b>Thùng rác</b><small class="mu" style="margin-right:auto;margin-left:10px">tự xoá sau 30 ngày</small><button id="trx" aria-label="Đóng">×</button></div><div id="trl"></div><div class="row"><button class="pill sm" id="trp">Dọn sạch thùng rác</button></div></div></div><div id="ar"><div id="arbx" role="dialog" aria-modal="true" aria-labelledby="art"><div class="trh"><b id="art">Kho</b><small class="mu" style="margin-right:auto;margin-left:10px">note đã cất, không hiện trên cây · giữ vô thời hạn</small><button id="arx" aria-label="Đóng">×</button></div><input id="arq" type="search" placeholder="Tìm trong kho…" aria-label="Tìm trong kho"><div id="arl"></div></div></div><div id="msb"><span id="msn"></span><button class="pill sm" id="msg">Gom nhóm</button><button class="pill sm" id="msc">Bỏ chọn</button><button class="pill sm" id="msx">Xong</button></div><div id="dwb"><button class="pill sm" id="dwp">Bút</button><button class="pill sm" id="dwh" title="Nét to, trong suốt để tô nổi bật">Dạ quang</button><button class="pill sm" id="dwe" title="Rê qua nét vẽ để xoá nét đó">Tẩy</button><button class="pill sm" id="dwl" style="display:none" title="Bật: nét vẽ mới nằm dưới chữ. Tắt: nét vẽ mới đè lên chữ">Dưới chữ</button><span id="dwc" class="row"></span><select id="dww" class="pill sm" aria-label="Độ dày nét"><option value="2">Mảnh</option><option value="4" selected>Vừa</option><option value="8">Dày</option></select><button class="pill sm" id="dwu" title="Hoàn tác nét (Ctrl+Z)" aria-label="Hoàn tác nét">↶</button><button class="pill sm" id="dwr" title="Làm lại nét (Ctrl+Y)" aria-label="Làm lại nét">↷</button><button class="pill sm" id="dwa">Xoá hết</button><button class="pill sm" id="dwx">Xong</button></div><div id="rb"></div><div id="hp"><div id="hpb2"><div class="trh"><b>Phím tắt</b><button id="hpx" aria-label="Đóng">×</button></div><div id="hph"></div><div id="hpl"></div></div></div><div id="au"><div id="aub"><b id="aut">Đăng nhập</b><small class="mu">Đăng nhập để lưu cây tri thức trên máy chủ và dùng ở mọi thiết bị.</small><input id="aue" type="email" placeholder="Email" autocomplete="username" aria-label="Email"><input id="aup" type="password" placeholder="Mật khẩu (từ 8 ký tự)" autocomplete="current-password" aria-label="Mật khẩu"><small id="aur" style="color:#b3402f"></small><div class="row"><button class="pill" id="aug">Đăng nhập</button><button class="pill sm" id="auf">Quên mật khẩu?</button><button class="pill sm" id="aus">Chưa có tài khoản? Đăng ký</button></div><button class="pill" id="agg" style="width:100%"><b style="color:#4285f4">G</b> Tiếp tục với Google</button><button class="pill sm" id="aul" style="align-self:flex-start">Dùng không cần tài khoản (chỉ lưu trên máy này)</button></div></div><div id="lkn"><span id="lkt"></span><button class="pill sm" id="lkx">Huỷ</button></div><div id="nlp"><div class="mbx"><b>Liên kết tới note</b><input id="nlq" placeholder="Tìm trong note…" aria-label="Tìm trong tiêu đề và nội dung note" title="Enter: kết quả kế tiếp · Shift+Enter: kết quả trước"><div id="nll"></div><div class="row"><button class="pill sm" id="nlx">Đóng</button></div></div></div>
 <div id="tm"><div class="mbx"><div class="trh"><b>Các cây tri thức</b><button id="tmx" aria-label="Đóng">×</button></div><div class="row"><input id="tmq" placeholder="Tên cây (để tạo mới hoặc đổi tên)" aria-label="Tên cây"><button class="pill sm" id="tmn">+ Tạo cây mới</button></div><div id="tml"></div><div class="row"><button class="pill sm" id="tmi" style="display:none" title="Xoá các ảnh trong kho mà không còn note nào dùng">Dọn ảnh không dùng…</button><button class="pill sm" id="tma" style="display:none;color:#b3402f">Xoá tài khoản…</button></div></div></div><div id="ts"></div><div id="tip"></div>
 <div id="ov"><header id="ob"><button class="pill" id="bk">← Về cây tri thức</button><span class="dlb" id="dlw"><button class="pill" id="dlb" aria-haspopup="menu" aria-expanded="false">Tải về ▾</button><div id="dlm" role="menu"><button id="xw" role="menuitem">Word (.docx)</button><button id="xh" role="menuitem">Trang web (.html)</button></div></span><div id="tbt" role="tablist" aria-label="Nhóm công cụ"><button data-t="h">Trang chủ</button><button data-t="p">Đoạn văn</button><button data-t="i">Chèn</button><button data-t="b">Bảng</button><button data-t="l">Bố cục</button><button data-t="v">Vẽ</button><button data-t="x">Xem</button></div><div id="tb" data-tab="h">
 <span class="g" data-t="h p i b v"><button data-c="undo" title="Hoàn tác (Ctrl+Z)">↶</button><button data-c="redo" title="Làm lại (Ctrl+Y)">↷</button></span>
-<span class="g" data-t="h"><button data-cb="cut" title="Cắt (Ctrl+X)">Cắt</button><button data-cb="copy" title="Sao chép (Ctrl+C)">Chép</button><button data-cb="paste" title="Dán (Ctrl+V)">Dán</button><button id="wdfp" aria-pressed="false" title="Cọ định dạng: đặt con trỏ vào chữ mẫu, bấm nút, rồi bôi đen vùng cần áp dụng">Cọ định dạng</button><button id="wdfb" title="Tìm và thay thế (Ctrl+H)">Tìm &amp; thay</button><button data-cb="all" title="Chọn toàn bộ trang (Ctrl+A)">Chọn tất cả</button><button id="wdabb" title="Quản lý chữ viết tắt: gõ tắt, tự mở rộng thành cụm đầy đủ">Viết tắt</button></span>
+<span class="g" data-t="h"><button data-cb="cut" title="Cắt (Ctrl+X)">Cắt</button><button data-cb="copy" title="Sao chép (Ctrl+C)">Chép</button><button data-cb="paste" title="Dán (Ctrl+V)">Dán</button><button id="wdfp" aria-pressed="false" title="Cọ định dạng: đặt con trỏ vào chữ mẫu, bấm nút, rồi bôi đen vùng cần áp dụng">Cọ định dạng</button><button id="wdfb" title="Tìm và thay thế (Ctrl+H)">Tìm &amp; thay</button><button data-cb="all" title="Chọn toàn bộ trang (Ctrl+A)">Chọn tất cả</button><button id="wdabb" title="Quản lý chữ viết tắt: gõ tắt, tự mở rộng thành cụm đầy đủ">Viết tắt</button><button id="spb" aria-pressed="true" title="Bật/tắt gạch chân kiểm tra chính tả (đang bật)">Chính tả: Bật</button></span>
 <span class="g" data-t="h"><select id="sy" aria-label="Kiểu đoạn"><option value="p">Văn bản</option><option value="h1">Tiêu đề 1</option><option value="h2">Tiêu đề 2</option><option value="h3">Tiêu đề 3</option><option value="title">Tiêu đề lớn</option><option value="sub">Phụ đề</option><option value="blockquote">Trích dẫn</option></select><select id="sf" aria-label="Phông chữ"><option>Be Vietnam Pro</option><option>Arial</option><option>Times New Roman</option><option>Georgia</option><option>Courier New</option></select><select id="ss" aria-label="Cỡ chữ (pt)"><option>9</option><option>10</option><option selected>11</option><option>12</option><option>14</option><option>16</option><option>18</option><option>24</option><option>32</option><option>48</option><option>72</option></select><button data-fx="up" title="Tăng cỡ chữ">A▲</button><button data-fx="dn" title="Giảm cỡ chữ">A▼</button><select id="wdcs" aria-label="Đổi kiểu chữ" title="Đổi chữ hoa / thường"><option value="">Aa</option><option value="sent">Viết hoa đầu câu</option><option value="lower">chữ thường</option><option value="upper">CHỮ HOA</option><option value="title">Viết Hoa Từng Chữ</option><option value="flip">đẢO hOA tHƯỜNG</option></select></span>
 <span class="g" data-t="h"><button data-c="bold" title="In đậm (Ctrl+B)"><b>B</b></button><button data-c="italic" title="In nghiêng (Ctrl+I)"><i>I</i></button><button data-c="underline" title="Gạch chân (Ctrl+U)"><u>U</u></button><button data-c="strikeThrough" title="Gạch ngang"><s>S</s></button><button data-c="subscript" title="Chỉ số dưới">x₂</button><button data-c="superscript" title="Chỉ số trên">x²</button><label class="cl" title="Màu chữ">A<input type="color" id="fc" value="#c0392b"></label><span class="hl" title="Tô nổi bật (bấm lại cùng màu để bỏ tô)"><button data-hl="cur" id="hlb">🖍 Tô</button><i data-hl="#fff200" style="background:#fff200"></i><i data-hl="#b6f0a0" style="background:#b6f0a0"></i><i data-hl="#a0e7f5" style="background:#a0e7f5"></i><i data-hl="#ffc0e0" style="background:#ffc0e0"></i><i data-hl="#ffd29a" style="background:#ffd29a"></i><label class="cl" title="Màu tô khác">+<input type="color" id="hc" value="#fff200"></label><button data-hl="off">Bỏ tô</button></span><button data-c="removeFormat" title="Xoá định dạng">Xoá ĐD</button></span>
 <span class="g" data-t="p"><button data-c="justifyLeft" title="Căn trái">Trái</button><button data-c="justifyCenter" title="Căn giữa">Giữa</button><button data-c="justifyRight" title="Căn phải">Phải</button><button data-c="justifyFull" title="Căn đều hai bên">Đều</button></span>
@@ -321,14 +329,15 @@ body.ro .lr [data-k="a"],body.ro #drw,body.ro #nf,body.ro #msm,body.ro #trb,body
   <div id="pbd"><textarea id="pb" rows="2" placeholder="Tóm tắt ngắn — hiện khi rê chuột vào note" aria-label="Tóm tắt"></textarea><div class="pq"><button class="pill" id="op"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>Mở trang</span></button><button class="pill" id="opw" title="Mở trong cửa sổ mới (Shift + bấm đúp vào note)"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M21 3h-6M21 3v6M21 3l-8 8"/></svg><span>Cửa sổ mới</span></button><button class="pill" id="ad" title="Thêm nhánh con"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Thêm nhánh</span></button><button class="pill del" id="dl" title="Xoá nhánh này (cần xác nhận)"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5"/></svg><span>Xoá nhánh</span></button></div>
   <div id="lks"></div>
   <div class="row" id="ptg"><button class="pill sm" id="pmo-t" aria-expanded="false" aria-controls="pmo">⋯ Thao tác</button><button class="pill sm" id="pst-t" aria-expanded="false" aria-controls="pst"><span id="pdot"></span>Kiểu</button></div>
-  <div class="acts pxt" id="pmo" hidden><button class="pill" id="fl">Thu gọn</button><button class="pill" id="lkb" title="Nối note này với một note khác (phím K)">Nối note…</button><button class="pill" id="mvb" title="Chuyển note này (cùng các note con) vào dưới một note khác (phím V)">Chuyển nhánh…</button><button class="pill" id="mab" title="Giữ note ở nhánh hiện tại và cho nó thuộc thêm một nhánh khác (phím Shift+V)">Thêm vào nhánh…</button><button class="pill" id="dtc" title="Tách khỏi nhánh hiện tại thành note độc lập">Tách độc lập</button><button class="pill" id="ug" title="Đưa các note trong nhóm ra ngoài">Bỏ nhóm</button></div>
+  <div class="acts pxt" id="pmo" hidden><button class="pill sm" id="arpk" title="Cất note vào kho (ẩn khỏi cây, lấy ra lại khi cần)">📦 Cất vào kho</button><button class="pill sm" id="lkset" title="Mã hoá nội dung note bằng mật khẩu">🔒 Đặt mật khẩu</button><button class="pill sm" id="lkrm" style="display:none">🔓 Bỏ khoá</button><button class="pill" id="fl">Thu gọn</button><button class="pill" id="lkb" title="Nối note này với một note khác (phím K)">Nối note…</button><button class="pill" id="mvb" title="Chuyển note này (cùng các note con) vào dưới một note khác (phím V)">Chuyển nhánh…</button><button class="pill" id="mab" title="Giữ note ở nhánh hiện tại và cho nó thuộc thêm một nhánh khác (phím Shift+V)">Thêm vào nhánh…</button><button class="pill" id="dtc" title="Tách khỏi nhánh hiện tại thành note độc lập">Tách độc lập</button><button class="pill" id="ug" title="Đưa các note trong nhóm ra ngoài">Bỏ nhóm</button></div>
   <div class="pxt" id="pst" hidden><div class="row"><span class="mu">Hình dạng</span><select id="shp" class="pill sm" aria-label="Hình dạng"><option value="c">Tròn</option><option value="s">Vuông bo góc</option></select><span class="mu">Kích thước</span><select id="szs" class="pill sm" aria-label="Kích thước"><option value="46">Nhỏ</option><option value="">Vừa</option><option value="92">Lớn</option></select></div><div class="row"><span id="sws" class="row"></span></div></div></div>
 </div>
+<div id="lkd" hidden role="dialog" aria-modal="true" aria-labelledby="lkdt"><div class="lkb"><h3 id="lkdt"></h3><p id="lkdp"></p><div id="lkdf"></div><div id="lkde" class="lke" role="alert"></div><div class="lka"><button type="button" class="pill" id="lkdn">Huỷ</button><button type="button" class="pill lky" id="lkdy">OK</button></div><div id="lkdx" class="lkx"></div></div></div>
 <script>
 const W=64,GX=210,GY=120,PAL=['#1f8a7a','#5b5fc7','#b9831a','#b8436b','#2f7fc1','#7a9a2e'];const PAL2=PAL.concat(['#d9534f','#e08e0b','#8e44ad','#16a085','#34495e','#8a9aa0']);
 const $=s=>document.querySelector(s),cv=$('#cv'),wd=$('#w'),nd=$('#nd'),es=$('#e'),pn=$('#pn');
 let FOC=null,FSNAP=null,FOCS=null,FOCD=null,FV=null,FDEF=2;   // chế độ Tập trung (khai báo sớm vì layout / snapState dùng tới khi khởi động)
-let API=null,ver=0,lock=false,busy=false,again=false,qw=false,RO=false,TID='main',TL=[],LK=[],DW=[],drRef=null,drN=-1,dmode=false,dw=null,fitLater=false,lkFrom=null,lmode=false,lex=new Set(),fy=0,zl=0,zt=null,anim=0,pend=null,shown=null,L=3,ms=new Set(),msOn=false,T=[],dlA=null,N={},sel=null,V={x:80,y:window.innerHeight/2,k:1},uid=1,hits=null;
+let KEYS={},KRAW={},LKC={};const LK_IT=250000,LK_CAP=8e6,LKB=/^[A-Za-z0-9+\/=_-]*$/;let API=null,ver=0,lock=false,busy=false,again=false,qw=false,RO=false,TID='main',TL=[],LK=[],DW=[],drRef=null,drN=-1,dmode=false,dw=null,fitLater=false,lkFrom=null,lmode=false,lex=new Set(),fy=0,zl=0,zt=null,anim=0,pend=null,shown=null,L=3,ms=new Set(),msOn=false,T=[],dlA=null,N={},sel=null,V={x:80,y:window.innerHeight/2,k:1},uid=1,hits=null;
 const mk=(t,b,p,col)=>{const id='n'+uid+++'_'+Math.random().toString(36).slice(2,6);   // đuôi ngẫu nhiên để hai thiết bị không tạo trùng id
 N[id]={id,t,b,p,c:[],x:0,y:0,col,fold:0,cr:Date.now(),md:Date.now()};if(p)N[p].c.push(id);return id};
 function seed(){N={};uid=1;const r=mk('Bộ não thứ hai','Gốc của mọi tri thức. Bấm + để thêm nhánh.',null,null);
@@ -361,7 +370,7 @@ const esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&qu
 function render(){
   const v=vis(),nwS=new Set(shown?v.filter(i=>!shown.has(i)):[]),mpS=new Set(LK.filter(l=>l.k=='p'&&N[l.a]).map(l=>l.b));shown=new Set(v);
   nd.innerHTML=v.map(id=>{const n=N[id],s=id==sel,q=hits;
-    return `<div class="n${nwS.has(id)?' nw':''}${n.p?'':' root'}${n.g?' grp':''}${n.sh=='s'?' shs':''}${mpS.has(id)?' mp':''}${ms.has(id)?' ms':''}${s?' sel':''}${q&&q.has(id)?' hit':''}${q&&!q.has(id)?' dim':''}" data-id="${esc(id)}" tabindex="0" style="transform:translate(${n.x}px,${n.y}px);width:${sz(n)}px;height:${sz(n)}px;--c:${col(id)}"><span class="lb">${esc(n.t||'Chưa đặt tên')}</span>${n.d?'<u class="dc"></u>':''}${n.c.length?`<i class="fold" data-a="f" title="Thu gọn / mở rộng">${hid(id)?'+'+(desc(id).length-1):'–'}</i>`:''}${s?'<button class="add" data-a="a" title="Thêm nhánh con" aria-label="Thêm nhánh con">+</button>':''}</div>`}).join('');
+    return `<div class="n${nwS.has(id)?' nw':''}${n.p?'':' root'}${n.g?' grp':''}${n.sh=='s'?' shs':''}${mpS.has(id)?' mp':''}${ms.has(id)?' ms':''}${s?' sel':''}${q&&q.has(id)?' hit':''}${q&&!q.has(id)?' dim':''}" data-id="${esc(id)}" tabindex="0" style="transform:translate(${n.x}px,${n.y}px);width:${sz(n)}px;height:${sz(n)}px;--c:${col(id)}"><span class="lb">${n.lk?'🔒 ':''}${esc(n.t||'Chưa đặt tên')}</span>${n.d?'<u class="dc"></u>':''}${n.c.length?`<i class="fold" data-a="f" title="Thu gọn / mở rộng">${hid(id)?'+'+(desc(id).length-1):'–'}</i>`:''}${s?'<button class="add" data-a="a" title="Thêm nhánh con" aria-label="Thêm nhánh con">+</button>':''}</div>`}).join('');
   const el={};nd.querySelectorAll('.n').forEach(e=>el[e.dataset.id]=e);
   es.innerHTML=v.filter(id=>N[id].p&&el[N[id].p]&&!N[id].free).map(id=>`<path${nwS.has(id)?' class="nw"':''} data-id="${esc(id)}" d="${ed(id)}" stroke="${col(id)}" opacity=".75"/>`).join('')+lkHtml(v);
   const f=Object.keys(N).length;
@@ -388,7 +397,8 @@ function rescue(id){const dead=new Set(desc(id));let n=0,again=true;
  return n}
 function del(id){if(!N[id]||!N[id].p)return;const kept=rescue(id),p=N[N[id].p],ids=desc(id),nodes={};ids.forEach(i=>nodes[i]=N[i]);const e={tid:'t'+Date.now(),at:Date.now(),id,idx:p.c.indexOf(id),par:p.id,nodes,lk:LK.filter(l=>ids.includes(l.a)||ids.includes(l.b))};LK=LK.filter(l=>!ids.includes(l.a)&&!ids.includes(l.b));ids.forEach(i=>delete N[i]);p.c=p.c.filter(c=>c!=id);const full=trashPush(e);sel=p.id;render();undoBar(e);if(kept||full)flash((kept?kept+' note dùng chung được giữ lại ở nhánh khác của chúng. ':'')+(full?TFULL:''),6000)}
 const TFULL='Thùng rác đã đủ 30 mục nên mục cũ nhất vừa bị xoá hẳn.';
-function trashPush(e){T.unshift(e);if(T.length<=30)return false;T=T.slice(0,30);return true}
+const TR=()=>T.filter(e=>!e.ar);
+function trashPush(e){T.unshift(e);let full=false;while(TR().length>30){const k=T.map(x=>!x.ar).lastIndexOf(true);T.splice(k,1);full=true}return full}
 function fit(now){if(innerWidth<50||innerHeight<50){fitLater=true;return}      // cửa sổ chưa có kích thước (tab mở ngầm, cửa sổ thu nhỏ): chờ tới khi có rồi mới căn
  const v=vis().map(i=>{const q=pend&&pend[i];return q?{x:q[0],y:q[1]}:N[i]});const x0=Math.min(...v.map(n=>n.x)),x1=Math.max(...v.map(n=>n.x+W)),y0=Math.min(...v.map(n=>n.y)),y1=Math.max(...v.map(n=>n.y+80));
   const SB=lmode?Math.min(300,innerWidth*.86):0,w=innerWidth-SB,h=innerHeight,k=Math.max(.15,Math.min(1.2,(w-120)/(x1-x0),(h-200)/(y1-y0)));fly(SB+(w-(x1-x0)*k)/2-x0*k,(h-(y1-y0)*k)/2-y0*k+20,k,now?0:undefined)}
@@ -446,22 +456,22 @@ function sanitizeState(d){if(!d||typeof d!='object'||!d.N||typeof d.N!='object')
   if(typeof v.h=='string'&&v.h)o.h=v.h.slice(0,120);if(typeof v.f=='string'&&v.f)o.f=v.f.slice(0,120);if(v.pn===0)o.pn=0;return Object.keys(o).length?o:null};
  const note=(n,k)=>{const o={id:k,t:str(n.t),b:str(n.b),p:idk(n.p)?n.p:null,c:Array.isArray(n.c)?n.c.filter(idk):[],x:num(n.x,0),y:num(n.y,0),col:n.col==null?n.col:num(n.col,0),fold:n.fold?1:0,cr:num(n.cr,Date.now()),md:num(n.md,Date.now())};
   ['open','hid','g','free'].forEach(f=>{if(n[f])o[f]=1});if(n.sh=='s'||n.sh=='c')o.sh=n.sh;if(num(n.sz,0)>0)o.sz=num(n.sz,0);
-  if(typeof n.cc=='string'&&(HEX.test(n.cc)||n.cc=='var(--ink)'))o.cc=n.cc;if(n.d)o.d=clean(str(n.d));const ik=draws(n.dw);if(ik.length)o.dw=ik;const pl=pgLay(n.pl);if(pl)o.pl=pl;return o};
+  if(typeof n.cc=='string'&&(HEX.test(n.cc)||n.cc=='var(--ink)'))o.cc=n.cc;if(n.d)o.d=clean(str(n.d));const ik=draws(n.dw);if(ik.length)o.dw=ik;const pl=pgLay(n.pl);if(pl)o.pl=pl;if(n.lk){const L=lkSan(n.lk);if(L){o.lk=L;delete o.d;delete o.dw;o.b=''}}return o};
  const notes=m=>{const o={};for(const k in m)if(idk(k)&&m[k]&&typeof m[k]=='object')o[k]=note(m[k],k);return o};
  const links=a=>(Array.isArray(a)?a:[]).filter(l=>l&&typeof l=='object'&&idk(l.id)&&idk(l.a)&&idk(l.b)).map(l=>Object.assign({id:l.id,a:l.a,b:l.b,t:str(l.t)},l.k=='p'?{k:'p'}:{}));   // k:'p' = note b còn thuộc thêm nhánh của note a
  const A=notes(d.N),r=Object.keys(A).find(k=>!A[k].p),NN={};if(!r)throw new Error('bad state');
  (function go(k,p){const n=A[k],cs=n.c;n.p=p;n.c=[];NN[k]=n;cs.forEach(c=>{if(own(A,c)&&!own(NN,c)){n.c.push(c);go(c,k)}})})(r,null);   // chỉ giữ các note nối được về gốc, quan hệ cha–con khớp nhau
- const T=(Array.isArray(d.T)?d.T:[]).filter(e=>e&&typeof e=='object'&&idk(e.tid)&&idk(e.id)&&e.nodes&&typeof e.nodes=='object').map(e=>{const nodes=notes(e.nodes);for(const k in nodes)nodes[k].c=nodes[k].c.filter(c=>own(nodes,c));return{tid:e.tid,at:num(e.at,Date.now()),id:e.id,idx:Math.max(0,num(e.idx,0)),par:idk(e.par)?e.par:'',nodes,lk:links(e.lk)}}).filter(e=>own(e.nodes,e.id));
+ const T=(Array.isArray(d.T)?d.T:[]).filter(e=>e&&typeof e=='object'&&idk(e.tid)&&idk(e.id)&&e.nodes&&typeof e.nodes=='object').map(e=>{const nodes=notes(e.nodes);for(const k in nodes)nodes[k].c=nodes[k].c.filter(c=>own(nodes,c));return{tid:e.tid,at:num(e.at,Date.now()),id:e.id,idx:Math.max(0,num(e.idx,0)),par:idk(e.par)?e.par:'',nodes,lk:links(e.lk),...(e.ar?{ar:1}:{})}}).filter(e=>own(e.nodes,e.id));
  const v=d.V,u=num(d.uid,0);
  return{N:NN,LK:links(d.LK),DW:draws(d.DW),T,V:v&&typeof v=='object'?{x:num(v.x,0),y:num(v.y,0),k:Math.min(2.5,Math.max(.15,num(v.k,1)))}:undefined,sel:typeof d.sel=='string'&&own(NN,d.sel)?d.sel:null,uid:u>0?u:1+Math.max(0,...Object.keys(NN).map(k=>+k.slice(1)||0)),lv:num(d.lv,0)||undefined,rad:d.rad?1:undefined,KB:d.KB}}
 // Gộp ba bên khi máy chủ có bản mới hơn: gốc = lần đồng bộ gần nhất (SNAP), mình = cây đang mở, họ = bản trên máy chủ (đã làm sạch).
 // Trả về null nếu hai bên sửa cùng một chỗ theo cách khác nhau; khi đó trang giữ cách cũ: khoá lại và tải bản của mình về.
-function merge3(srv){if(typeof focusExit=='function')focusExit(true);const J=JSON.stringify,eq=(a,b)=>J(a)===J(b)||(!a&&!b),M={},soft=['x','y','md','open','fold','hid'],base={};
+function merge3(srv,Nm=typeof lkNv=='function'?lkNv():N){if(typeof focusExit=='function')focusExit(true);const J=JSON.stringify,eq=(a,b)=>J(a)===J(b)||(!a&&!b),M={},soft=['x','y','md','open','fold','hid'],base={};
  for(const i in SNAP.n)base[i]=JSON.parse(SNAP.n[i]);
  const dif=(a,b)=>[...new Set(Object.keys(a).concat(Object.keys(b)))].filter(k=>!eq(a[k],b[k])),hard=(a,b)=>dif(a,b).some(k=>!soft.includes(k));
  const by=(a,k)=>{const o={};a.forEach(x=>o[x[k]]=x);return o};      // liên kết ngang và thùng rác: gộp theo id
  const m3=(bs,mine,th,k)=>{const B=by(bs,k),Mi=by(mine,k),Th=by(th,k);return mine.filter(x=>!own(B,x[k])&&!own(Th,x[k])).concat(th.filter(x=>!own(B,x[k])||own(Mi,x[k])).map(x=>own(Mi,x[k])&&own(B,x[k])&&!eq(Mi[x[k]],B[x[k]])?Mi[x[k]]:x))};
- for(const i of new Set(Object.keys(base).concat(Object.keys(N),Object.keys(srv.N)))){const b=own(base,i)&&base[i],m=own(N,i)&&N[i],s=own(srv.N,i)&&srv.N[i];
+ for(const i of new Set(Object.keys(base).concat(Object.keys(Nm),Object.keys(srv.N)))){const b=own(base,i)&&base[i],m=own(Nm,i)&&Nm[i],s=own(srv.N,i)&&srv.N[i];
   if(!b){if(m&&s)return null;M[i]=Object.assign({},m||s);continue}      // note mới ở một bên
   if(!m&&!s)continue;
   if(!m){if(hard(s,b))return null;continue}      // mình xoá, họ sửa
@@ -474,13 +484,13 @@ function merge3(srv){if(typeof focusExit=='function')focusExit(true);const J=JSO
    if(ks.includes(k)&&!eq(m[k],s[k])&&!soft.includes(k))return null;      // cùng một trường, hai giá trị khác nhau
    if(k in m)o[k]=m[k];else delete o[k]}
   M[i]=o}
- const R=sanitizeState({N:M,DW:m3(JSON.parse(SNAP.t.DW||'[]'),DW,srv.DW||[],'id'),LK:m3(JSON.parse(SNAP.t.LK||'[]'),LK,srv.LK,'id'),T:m3(JSON.parse(SNAP.t.T||'[]'),T,srv.T,'tid').slice(0,30),uid:Math.max(uid,srv.uid||0),lv:J(L)!==SNAP.t.lv?L:srv.lv||L,rad:1});
+ const R=sanitizeState({N:M,DW:m3(JSON.parse(SNAP.t.DW||'[]'),DW,srv.DW||[],'id'),LK:m3(JSON.parse(SNAP.t.LK||'[]'),LK,srv.LK,'id'),T:m3(JSON.parse(SNAP.t.T||'[]'),T,srv.T,'tid').filter((e,i,a)=>e.ar||a.slice(0,i).filter(x=>!x.ar).length<30),uid:Math.max(uid,srv.uid||0),lv:J(L)!==SNAP.t.lv?L:srv.lv||L,rad:1});
  return Object.keys(R.N).length==Object.keys(M).length?R:null}
 // Vị trí khung nhìn và note đang chọn: lưu riêng trên máy theo từng cây, không gửi lên máy chủ
 function vwKey(id){return'kt_view_'+(id||TID)}
 function saveView(){if(!API||RO||!TID)return;try{localStorage.setItem(vwKey(),JSON.stringify({V,sel}))}catch(x){}}
 function withView(d){if(!API||RO||!d||typeof d!='object')return d;try{const w=JSON.parse(localStorage.getItem(vwKey()));if(w&&typeof w=='object'){if(w.V)d.V=w.V;if('sel' in w)d.sel=w.sel}}catch(x){}return d}
-let st;function save(){if(RO)return;clearTimeout(st);st=setTimeout(()=>{if(API){saveView();if(failN)saveDraft();push()}else{try{localStorage.setItem(lsKey(),JSON.stringify({N,sel,V,uid,T,rad:1,lv:L,LK,DW}))}catch(x){if(!qw){qw=true;flash('Bộ nhớ trình duyệt đã đầy nên thay đổi gần đây chưa được lưu. Hãy bấm Sao lưu và bớt ảnh lớn.')}}}},300)}
+let st;function save(){if(RO)return;clearTimeout(st);st=setTimeout(()=>{if(API){saveView();if(failN)saveDraft();push()}else{try{localStorage.setItem(lsKey(),JSON.stringify({N:lkOutN(N),sel,V,uid,T:lkOutT(T),rad:1,lv:L,LK,DW}))}catch(x){if(!qw){qw=true;flash('Bộ nhớ trình duyệt đã đầy nên thay đổi gần đây chưa được lưu. Hãy bấm Sao lưu và bớt ảnh lớn.')}}}},300)}
 (function init(){try{TID=localStorage.getItem('ktree_cur')||'main';TL=JSON.parse(localStorage.getItem('ktree_list'))||[]}catch(x){}if(!TL.length)TL=[{id:'main',name:'Cây của tôi'}];if(!TL.some(t=>t.id==TID))TID=TL[0].id;let d=null;try{d=JSON.parse(localStorage.getItem(lsKey()));d=d&&d.N?sanitizeState(d):null}catch(x){d=null}
   if(d&&d.N&&Object.keys(d.N).length){N=d.N;LK=d.LK||[];DW=d.DW||[];T=d.T||[];Object.values(N).forEach(n=>{n.cr=n.cr||Date.now();n.md=n.md||n.cr});sel=d.sel;V=d.V||V;uid=d.uid;L=d.lv||3;$('#lv').value=String(L);const nl=!d.rad||!d.lv;if(nl)layout();spread();render();xf();if(nl)fit(1)}else{seed();render();xf();fit(1)}})();
 const ov=$('#ov'),pg=$('#pg'),pT=$('#ptl'),tip=$('#tip'),dgd=$('#dgd');let rg,dgEl=null;
@@ -519,8 +529,8 @@ pg.addEventListener('dblclick',e=>{const f=e.target.closest('figure.dg');if(f)dg
 addEventListener('keydown',e=>{if(e.key=='Escape'&&ov.classList.contains('on')){pmode?inkTog(false):dgd.classList.contains('on')?dgd.classList.remove('on'):closeDoc()}
  if(pmode&&(e.ctrlKey||e.metaKey)&&!e.altKey){const k=e.key.toLowerCase();if(k=='z'||k=='y'){e.preventDefault();k=='y'||e.shiftKey?dRedo():dUndo()}}});      // đang vẽ tay trong trang: Ctrl+Z / Ctrl+Y áp dụng cho nét vẽ
 cv.addEventListener('mousemove',e=>{const n=!drag&&!dmode&&e.target.closest('.n');if(!n){tip.style.display='none';return}
- const o=N[n.dataset.id];let s=o.b;if(!s&&o.d){s=txt(o.d).slice(0,160)}
- tip.innerHTML=`<b>${esc(o.t||'Chưa đặt tên')}</b><p>${esc(s||'Chưa có tóm tắt.')}</p><small>Tạo: ${fd(o.cr)}<br>Sửa gần nhất: ${fd(o.md)}<br>${extraPar(n.dataset.id).length?'Cũng thuộc: '+esc(extraPar(n.dataset.id).map(i=>N[i].t||'Chưa đặt tên').join(', '))+'<br>':''}${o.c.length?o.c.length+' nhánh con · ':''}Bấm đúp để mở trang</small>`;
+ const o=N[n.dataset.id],hd=lkHidden(n.dataset.id);let s=hd?'***':o.b;if(!s&&o.d){s=txt(o.d).slice(0,160)}
+ tip.innerHTML=`<b>${esc(o.t||'Chưa đặt tên')}</b><p>${esc(s||'Chưa có tóm tắt.')}</p><small>Tạo: ${hd?'***':fd(o.cr)}<br>Sửa gần nhất: ${hd?'***':fd(o.md)}<br>${extraPar(n.dataset.id).length?'Cũng thuộc: '+esc(extraPar(n.dataset.id).map(i=>N[i].t||'Chưa đặt tên').join(', '))+'<br>':''}${o.c.length?o.c.length+' nhánh con · ':''}Bấm đúp để mở trang</small>`;
  tip.style.display='block';tip.style.left=Math.min(e.clientX+16,innerWidth-280)+'px';tip.style.top=Math.min(e.clientY+16,innerHeight-130)+'px'});
 const ex=(a,v)=>{back();document.execCommand(a,false,v);pg.oninput()};
 $('#sf').onchange=e=>ex('fontName',e.target.value);
@@ -920,19 +930,19 @@ cv.addEventListener('dblclick',e=>{if(dmode||ov.classList.contains('on'))return;
 function pplace(){if(!sel||!N[sel]||innerWidth<=640)return;const n=N[sel],w=300,h=pn.offsetHeight||280,wr=sz(n);let x=V.x+(n.x+wr)*V.k+44;if(x+w>innerWidth-8)x=V.x+n.x*V.k-w-44;
  pn.style.left=Math.max(8,Math.min(innerWidth-w-8,x))+'px';pn.style.top=Math.max(64,Math.min(innerHeight-h-8,V.y+n.y*V.k-10))+'px'}
 let udT;
-function trashLbl(){const b=$('#trb');if(b)b.textContent=T.length?'Thùng rác ('+T.length+')':'Thùng rác'}
-function undoBar(e){const c=Object.keys(e.nodes).length;$('#uds').textContent='Đã xoá "'+(e.nodes[e.id].t||'note')+'"'+(c>1?' và '+(c-1)+' note con':'');$('#ud').style.display='flex';$('#udb').onclick=()=>{slide(()=>restore(e.tid));$('#ud').style.display='none'};clearTimeout(udT);udT=setTimeout(()=>$('#ud').style.display='none',9000)}
+function trashLbl(){const b=$('#trb'),n=TR().length;if(b)b.textContent=n?'Thùng rác ('+n+')':'Thùng rác';const a=$('#arb'),m=T.length-n;if(a)a.textContent=m?'Kho ('+m+')':'Kho'}
+function undoBar(e){const c=Object.keys(e.nodes).length;$('#uds').textContent=(e.ar?'Đã cất vào kho "':'Đã xoá "')+(e.nodes[e.id].t||'note')+'"'+(c>1?' và '+(c-1)+' note con':'');$('#ud').style.display='flex';$('#udb').onclick=()=>{slide(()=>restore(e.tid));$('#ud').style.display='none'};clearTimeout(udT);udT=setTimeout(()=>$('#ud').style.display='none',9000)}
 function restore(tid){const k=T.findIndex(x=>x.tid==tid);if(k<0)return;const e=T[k],par=N[e.par]?e.par:root(),P=N[par],r=e.nodes[e.id],sib=P.c.length?N[P.c[P.c.length-1]]:null;
  const pp=outPos(P,P.c.length),dx=pp.x-r.x,dy=pp.y-r.y;Object.values(e.nodes).forEach(n=>{n.x+=dx;n.y+=dy;N[n.id]=n});r.p=par;(e.lk||[]).forEach(l=>{if(N[l.a]&&N[l.b]&&!LK.some(x=>x.id==l.id))LK.push(l)});P.c.splice(Math.min(e.idx,P.c.length),0,e.id);opn(P.id);T.splice(k,1);sel=e.id;samePar(e.id);
  spread(new Set(Object.keys(e.nodes)));V.x=innerWidth/2-r.x*V.k;V.y=innerHeight/2-r.y*V.k;xf();render()}
 function askDel(msg,fn,ok){cfAct=fn;$('#cfb b').textContent=ok?'Xác nhận':'Xác nhận xoá';$('#cfk').textContent=ok||'Xoá vĩnh viễn';$('#cfp').textContent=msg+' Không thể hoàn tác. Hãy gõ DELETE để xác nhận.';$('#cfi').value='';$('#cfk').disabled=true;$('#cfm').classList.add('on');$('#cfi').focus()}
-function trashUI(){T=T.filter(e=>Date.now()-e.at<2592e6);$('#trl').innerHTML=T.length?T.map(e=>{const r=e.nodes[e.id],c=Object.keys(e.nodes).length;return `<div class="ti"><div><b>${esc(r.t||'Chưa đặt tên')}</b><small>${c} note · xoá lúc ${fd(e.at)}</small></div><span class="row"><button class="pill sm" data-r="${esc(e.tid)}">Khôi phục</button><button class="pill sm" data-p="${esc(e.tid)}">Xoá hẳn</button></span></div>`}).join(''):'<p class="mu">Thùng rác trống.</p>';$('#trp').style.display=T.length?'':'none';trashLbl()}
+function trashUI(){T=T.filter(e=>e.ar||Date.now()-e.at<2592e6);$('#trl').innerHTML=TR().length?TR().map(e=>{const r=e.nodes[e.id],c=Object.keys(e.nodes).length;return `<div class="ti"><div><b>${esc(r.t||'Chưa đặt tên')}</b><small>${c} note · xoá lúc ${fd(e.at)}</small></div><span class="row"><button class="pill sm" data-r="${esc(e.tid)}">Khôi phục</button><button class="pill sm" data-p="${esc(e.tid)}">Xoá hẳn</button></span></div>`}).join(''):'<p class="mu">Thùng rác trống.</p>';$('#trp').style.display=TR().length?'':'none';trashLbl()}
 $('#trb').onclick=()=>{trashUI();$('#tr').classList.add('on')};
 $('#trx').onclick=()=>$('#tr').classList.remove('on');
 $('#trl').onclick=e=>{const b=e.target.closest('button');if(!b)return;
  if(b.dataset.r){slide(()=>restore(b.dataset.r));trashUI();flash('Đã khôi phục')}
  else if(b.dataset.p){const t=b.dataset.p,x=T.find(z=>z.tid==t);if(x)askDel('Xoá hẳn "'+(x.nodes[x.id].t||'note')+'" khỏi thùng rác?',()=>{T=T.filter(z=>z.tid!=t);trashUI();render()})}};
-$('#trp').onclick=()=>askDel('Dọn sạch '+T.length+' mục trong thùng rác?',()=>{T=[];trashUI();render()});
+$('#trp').onclick=()=>askDel('Dọn sạch '+TR().length+' mục trong thùng rác?',()=>{T=T.filter(e=>e.ar);trashUI();render()});
 function box(id){const n=N[id],s=sz(n);return{x:n.x+s/2-79,y:n.y-6,w:158,h:s+46}}
 function spread(pin){const ids=vis();pin=pin||new Set();
  for(let it=0;it<80;it++){let ch=0;const g=new Map();
@@ -972,7 +982,7 @@ function listRender(){const q=hits,show=new Set();
  let need=0;if(sel!==lastSel){lastSel=sel;need=1;if(sel&&N[sel]){let p=N[sel].p;while(p){lex.add(p);p=N[p].p}}}
  if(q)q.forEach(i=>{show.add(i);let p=N[i].p;while(p){show.add(p);p=N[p].p}});
  let h='';(function go(id,d){const n=N[id];if(q&&!show.has(id))return;const refs=q?[]:LK.filter(l=>l.k=='p'&&l.a==id&&N[l.b]).map(l=>l.b),kids=n.c.length+refs.length,open=q?n.c.some(c=>show.has(c)):lex.has(id);
-  h+=`<div class="lr${id==sel?' sel':''}${q&&q.has(id)?' hit':''}" draggable="${n.p?'true':'false'}" data-id="${esc(id)}" style="margin-left:${d*22}px;--c:${col(id)}"><button class="ar" data-k="t" aria-label="Mở rộng hoặc thu gọn">${kids?(open?'▾':'▸'):''}</button><i class="dot"></i><span class="t">${esc(n.t||'Chưa đặt tên')}</span>${n.free?'<span class="cnt">độc lập</span>':''}${kids?`<span class="cnt">${kids}</span>`:''}<span class="s">${esc(n.b||'')}</span><span class="dt">${fd(n.md)}</span><span class="ac"><button class="pill sm" data-k="o">Mở</button><button class="pill sm" data-k="a">+ Con</button></span></div>`;
+  h+=`<div class="lr${id==sel?' sel':''}${q&&q.has(id)?' hit':''}" draggable="${n.p?'true':'false'}" data-id="${esc(id)}" style="margin-left:${d*22}px;--c:${col(id)}"><button class="ar" data-k="t" aria-label="Mở rộng hoặc thu gọn">${kids?(open?'▾':'▸'):''}</button><i class="dot"></i><span class="t">${esc(n.t||'Chưa đặt tên')}</span>${n.free?'<span class="cnt">độc lập</span>':''}${kids?`<span class="cnt">${kids}</span>`:''}<span class="s">${lkHidden(id)?'***':esc(n.b||'')}</span><span class="dt">${lkHidden(id)?'***':fd(n.md)}</span><span class="ac"><button class="pill sm" data-k="o">Mở</button><button class="pill sm" data-k="a">+ Con</button></span></div>`;
   if(kids&&open){srt(n.c).forEach(c=>go(c,d+1));      // sau các note con là các note dùng chung từ nhánh khác (chỉ là lối tắt, không mở rộng tiếp)
    refs.forEach(c=>{h+=`<div class="lr ref${c==sel?' sel':''}" data-id="${esc(c)}" style="margin-left:${(d+1)*22}px;--c:${col(c)}" title="Note dùng chung — nhánh chính: ${esc(N[N[c].p]?N[N[c].p].t||'':'')}"><button class="ar" data-k="t" tabindex="-1"></button><i class="dot"></i><span class="t">${esc(N[c].t||'Chưa đặt tên')}</span><span class="cnt">↗ dùng chung</span></div>`})}})(root(),0);
  $('#ls .lw').innerHTML=h||'<p class="mu">Không có note nào khớp.</p>';if(need){const sr=$('#ls .lr.sel');if(sr)sr.scrollIntoView({block:'nearest'})}}
@@ -1087,7 +1097,7 @@ function capture(c){if(!c)return;if(c=='Escape'){cap=null;hpRender();return}cons
 addEventListener('keydown',e=>{const c=kc(e);
  if(cap){e.preventDefault();e.stopPropagation();capture(c);return}
  if(hp.classList.contains('on')){if(e.key=='Escape'||keysOf('help').includes(c)){e.preventDefault();hpTog(false)}return}
- if(ov.classList.contains('on')||$('#cfm').classList.contains('on')||$('#tr').classList.contains('on')||$('#dgd').classList.contains('on')||$('#au').classList.contains('on'))return;
+ if(ov.classList.contains('on')||$('#cfm').classList.contains('on')||$('#tr').classList.contains('on')||$('#ar').classList.contains('on')||$('#dgd').classList.contains('on')||$('#au').classList.contains('on'))return;
  const a=document.activeElement;
  if(a&&(/INPUT|TEXTAREA|SELECT/.test(a.tagName)||a.isContentEditable)){if(e.key=='Escape')a.blur();return}
  if(a&&a.tagName=='BUTTON'&&(c=='Enter'||c=='Space'))return;
@@ -1159,7 +1169,7 @@ function tryDraft(){let dr=null;try{dr=JSON.parse(localStorage.getItem(draftKey(
 // Đổi vài lỗi của máy chủ sang lời dễ hiểu
 const emsg=e=>{const m=e&&e.message||'lỗi không rõ';return/trees_data_size/.test(m)?'cây vượt quá giới hạn 10 MB (hãy bớt nội dung hoặc ảnh nhúng)':/too_many_trees/.test(m)?'tài khoản đã đạt giới hạn 100 cây':m};
 function pushFail(m){pushOk=false;failN++;saveDraft();setSync(m);clearTimeout(pt2);pt2=setTimeout(doPush,Math.min(60000,5000*2**(failN-1)))}   // tự thử lại, giãn dần tới 60 giây
-async function doPush(){if(!API||lock||!TID)return;if(busy){again=true;return}busy=true;let done;pushP=new Promise(r=>done=r);const tid=TID;
+async function doPush(){if(!API||lock||!TID)return;await lkFlush();if(busy){again=true;return}busy=true;let done;pushP=new Promise(r=>done=r);const tid=TID;
  try{const c=cutState(),{set,add,upd,del,top,chg}=diffState(c);
   if(!chg){pushOk=true;failN=0;mergeN=0;dropDraft();setSync('Đã lưu lên Supabase')}
   else{let nv=null,conflict=false,gone=false,err=null,merged=false,wait=false,full=noRpc||pc>=40;
@@ -1314,7 +1324,7 @@ pg.addEventListener('paste',e=>{const f=[...((e.clipboardData&&e.clipboardData.f
 pg.addEventListener('dragover',e=>{if(e.dataTransfer&&[...(e.dataTransfer.types||[])].includes('Files'))e.preventDefault()});
 pg.addEventListener('drop',e=>{const f=[...((e.dataTransfer&&e.dataTransfer.files)||[])].find(x=>/^image\//.test(x.type));if(!f)return;e.preventDefault();
  const r=document.caretRangeFromPoint&&document.caretRangeFromPoint(e.clientX,e.clientY);if(r){const s=getSelection();s.removeAllRanges();s.addRange(r);rg=r}$('#fi').onchange({target:{files:[f],value:''}})});
-T=T.filter(e=>Date.now()-e.at<2592e6);trashLbl();
+T=T.filter(e=>e.ar||Date.now()-e.at<2592e6);trashLbl();
 function sz(n){return n.sz||(n.p?64:84)}
 $('#szs').onchange=e=>{const n=N[sel];if(!n)return;slide(()=>{const v=+e.target.value;if(v)n.sz=v;else delete n.sz;spread(new Set([sel]))})};
 // Hộp chọn note dùng cho hai việc: chèn liên kết tới note (mv rỗng) và chọn note cha mới khi chuyển nhánh (mv = id note cần chuyển)
@@ -1338,7 +1348,7 @@ $('#nll').onclick=e=>{const b=e.target.closest('button');if(!b)return;const id=b
 pg.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a.nl');if(!a)return;e.preventDefault();const id=a.dataset.note;if(N[id]){openDoc(id,e.shiftKey||e.ctrlKey||e.metaKey)}else flash('Note này đã bị xoá')});
 function lsKey(id){id=id||TID;return id=='main'?'ktree':'ktree_'+id}
 function saveTL(){if(API){try{localStorage.setItem('kt_cur_'+API.id,TID)}catch(x){}return}try{localStorage.setItem('ktree_list',JSON.stringify(TL));localStorage.setItem('ktree_cur',TID)}catch(x){}}
-function snapState(){return{N:FOC?fOrigN():N,sel,V:FOC&&FV?FV:V,uid,T,lv:L,rad:1,LK,DW}}
+function snapState(){const n=FOC?fOrigN():N;return{N:typeof lkOutN=='function'?lkOutN(n):n,sel,V:FOC&&FV?FV:V,uid,T:typeof lkOutT=='function'?lkOutT(T):T,lv:L,rad:1,LK,DW}}
 function srvState(){const s=snapState();delete s.sel;delete s.V;return s}
 function loadState(d){focusDrop();d=sanitizeState(withView(d));N=d.N;LK=d.LK||[];DW=d.DW||[];T=d.T||[];L=d.lv||3;V=d.V||{x:innerWidth/2,y:innerHeight/2,k:1};uid=d.uid||uid;sel=d.sel in N?d.sel:root();$('#lv').value=String(L);shown=null;hits=null;ms.clear();msOn=false;lkFrom=null;lkBar();render();xf()}
 function blankState(name){N={};uid=1;const r=mk(name,'Gốc của cây này.',null,null);N[r].x=-42;N[r].y=-42;return{N,sel:r,V:{x:innerWidth/2,y:innerHeight/2,k:1},uid,T:[],lv:3,rad:1,LK:[],DW:[]}}
@@ -1375,7 +1385,7 @@ async function shareOff(id){const t=TL.find(x=>x.id==id),r=await sb.from('trees'
 const IMG=()=>sb.storage.from('note-images');
 // Đưa ảnh nhúng base64 trong các note (và trong thùng rác) vào kho ảnh, để dữ liệu cây gửi lên máy chủ không phình to
 async function liftImgs(){if(!API)return 0;const done=new Map(),EXT={jpeg:'jpg',jpg:'jpg',png:'png',gif:'gif',webp:'webp'};let bad=0;
- for(const m of [N].concat(T.map(e=>e.nodes)))for(const i in m){const urls=[...new Set((String(m[i].d||'').match(/src="data:image\/(?:png|jpe?g|gif|webp);base64,[^"]+"/g)||[]).map(x=>x.slice(5,-1)))];
+ for(const m of [N].concat(T.map(e=>e.nodes)))for(const i in m){if(m[i]&&m[i].lk)continue;const urls=[...new Set((String(m[i].d||'').match(/src="data:image\/(?:png|jpe?g|gif|webp);base64,[^"]+"/g)||[]).map(x=>x.slice(5,-1)))];
   for(const u of urls){if(bad>=3)return done.size;      // kho ảnh không dùng được: thôi, giữ ảnh nhúng như cũ
    try{let r=done.get(u);
     if(!r){const mt=/^data:(image\/(\w+));base64,/.exec(u),bin=atob(u.slice(mt[0].length)),a=new Uint8Array(bin.length);for(let k=0;k<bin.length;k++)a[k]=bin.charCodeAt(k);
@@ -1558,6 +1568,150 @@ addEventListener('resize',()=>{WS.forEach(w=>{if(!w.max){wClamp(w);wApply(w)}})}
  q.addEventListener('pointerover',()=>{if(!q.classList.contains('open'))openQ()});q.addEventListener('focusin',()=>{if(!q.classList.contains('open'))openQ()});
  q.querySelectorAll('.pill').forEach(b=>{if(!b.title)b.title=b.textContent.trim()});
 })();
+
+(function(){const K='arbor.spell',b=$('#spb'),els=()=>[$('#pg'),$('#pt'),$('#pb')];let on=true;
+ try{on=localStorage.getItem(K)!='0'}catch(e){}
+ function ap(){els().forEach(e=>{if(e){e.spellcheck=on;e.setAttribute('spellcheck',on?'true':'false')}});
+  b.setAttribute('aria-pressed',on);b.textContent='Chính tả: '+(on?'Bật':'Tắt');b.title='Bật/tắt gạch chân kiểm tra chính tả (đang '+(on?'bật':'tắt')+')'}
+ b.addEventListener('mousedown',e=>e.preventDefault());
+ b.onclick=()=>{on=!on;try{localStorage.setItem(K,on?'1':'0')}catch(e){}ap();const g=$('#pg');if(document.activeElement===g){g.blur();g.focus({preventScroll:true})}flash('Kiểm tra chính tả: '+(on?'bật':'tắt'))};
+ ap()})();
+// ===== Khoá note bằng mật khẩu: mã hoá AES-GCM ngay trên máy; máy chủ chỉ thấy dữ liệu đã mã hoá =====
+// Mỗi note khoá có một khoá dữ liệu K ngẫu nhiên. K được bọc hai lần: bằng mật khẩu (PBKDF2) và bằng "mã khôi phục" (cũng qua PBKDF2).
+// Nội dung trang, tóm tắt và nét vẽ tay của note được mã hoá thành N[id].lk.c. Tiêu đề vẫn để rõ để nhận ra note trên cây.
+const LKE=new TextEncoder(),LKD=new TextDecoder();
+const lkB64=u=>{let s='';for(let i=0;i<u.length;i+=8192)s+=String.fromCharCode.apply(null,u.subarray(i,i+8192));return btoa(s)};
+const lkUn=s=>{const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u};
+function lkSan(v){if(!v||typeof v!='object'||v.v!==1)return null;const o={v:1};
+ for(const k of['s','w','rs','r','c']){if(typeof v[k]!='string'||!LKB.test(v[k])||v[k].length>LK_CAP||(k!='c'&&v[k].length>400))return null;o[k]=v[k]}
+ o.i=Math.min(1e6,Math.max(1e4,+v.i||LK_IT));if(typeof v.h=='string'&&v.h)o.h=v.h.slice(0,120);return o}
+const lkOk=()=>!!(window.crypto&&crypto.subtle);
+async function lkPw(pass,salt,it){const b=await crypto.subtle.importKey('raw',LKE.encode(pass),'PBKDF2',false,['deriveKey']);
+ return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:it,hash:'SHA-256'},b,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function lkSeal(key,bytes){const iv=crypto.getRandomValues(new Uint8Array(12)),ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},key,bytes)),o=new Uint8Array(12+ct.length);o.set(iv);o.set(ct,12);return lkB64(o)}
+async function lkOpen(key,b64){const u=lkUn(b64);return new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:u.subarray(0,12)},key,u.subarray(12)))}
+const lkRaw=u=>crypto.subtle.importKey('raw',u,'AES-GCM',false,['encrypt','decrypt']);
+const LK_AL='0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+function lkNewCode(){const u=crypto.getRandomValues(new Uint8Array(20));let s='';for(const x of u)s+=LK_AL[x&31];return s.match(/.{4}/g).join('-')}
+const lkNorm=c=>String(c||'').toUpperCase().replace(/O/g,'0').replace(/[IL]/g,'1').replace(/[^0-9A-Z]/g,'');
+const lkSig=n=>(n.d||'')+'\u0001'+(n.b||'')+'\u0001'+JSON.stringify(n.dw||[]);
+const lkPay=n=>JSON.stringify({d:n.d||'',b:n.b||'',dw:n.dw||[]});
+// ---- trạng thái trong phiên ----
+function lkHidden(id){return !!(N[id]&&N[id].lk&&!KEYS[id])}
+function lkNodes(){const a=[];for(const i in N)a.push(N[i]);T.forEach(e=>{for(const i in e.nodes)a.push(e.nodes[i])});return a.filter(n=>n&&n.lk&&KEYS[n.id])}
+function lkOutNote(n){if(!n||!n.lk)return n;const o=Object.assign({},n);delete o.d;delete o.dw;o.b='';return o}
+function lkOutN(m){let r=m;for(const i in m)if(m[i]&&m[i].lk){if(r===m)r=Object.assign({},m);r[i]=lkOutNote(m[i])}return r}
+function lkOutT(t){return t.map(e=>{let c=false;const nodes={};for(const i in e.nodes){nodes[i]=lkOutNote(e.nodes[i]);if(nodes[i]!==e.nodes[i])c=true}return c?Object.assign({},e,{nodes}):e})}
+const lkNv=()=>lkOutN(N);
+let lkP=Promise.resolve(),lkTm=0;const LKG={},LKBUSY=new Set(),LKJUST=new Set();
+function lkFlush(){lkP=lkP.then(async()=>{let ch=false;
+ for(const n of lkNodes()){const k=KEYS[n.id],s=lkSig(n);if(LKC[n.id]===s)continue;try{n.lk.c=await lkSeal(k,LKE.encode(lkPay(n)));LKC[n.id]=s;ch=true}catch(x){}}
+ if(ch&&typeof lkSave=='function')lkSave()}).catch(()=>{});return lkP}
+function lkSched(){clearTimeout(lkTm);if(Object.keys(KEYS).length)lkTm=setTimeout(lkFlush,500)}
+// ---- tạo / mở / khoá lại ----
+async function lkCreate(id,pass,hint){const n=N[id],K=crypto.getRandomValues(new Uint8Array(32)),salt=crypto.getRandomValues(new Uint8Array(16)),rs=crypto.getRandomValues(new Uint8Array(16)),code=lkNewCode();
+ const kp=await lkPw(pass,salt,LK_IT),kr=await lkPw(lkNorm(code),rs,LK_IT),key=await lkRaw(K);
+ const lk={v:1,i:LK_IT,s:lkB64(salt),w:await lkSeal(kp,K),rs:lkB64(rs),r:await lkSeal(kr,K),c:await lkSeal(key,LKE.encode(lkPay(n)))};if(hint)lk.h=hint.slice(0,120);
+ n.lk=lk;KEYS[id]=key;KRAW[id]=K;LKC[id]=lkSig(n);n.md=Date.now();return code}
+async function lkUnlockWith(id,how,secret){const n=N[id],L=n.lk;let K;
+ if(how=='p')K=await lkOpen(await lkPw(secret,lkUn(L.s),L.i),L.w);else K=await lkOpen(await lkPw(lkNorm(secret),lkUn(L.rs),L.i),L.r);
+ const key=await lkRaw(K),p=JSON.parse(LKD.decode(await lkOpen(key,L.c)));
+ n.d=typeof p.d=='string'?p.d:'';n.b=typeof p.b=='string'?p.b:'';if(Array.isArray(p.dw)&&p.dw.length)n.dw=p.dw;else delete n.dw;
+ KEYS[id]=key;KRAW[id]=K;LKC[id]=lkSig(n);return K}
+async function lkRewrap(id,pass,hint){const n=N[id],K=KRAW[id],salt=crypto.getRandomValues(new Uint8Array(16));n.lk.s=lkB64(salt);n.lk.i=LK_IT;n.lk.w=await lkSeal(await lkPw(pass,salt,LK_IT),K);if(hint)n.lk.h=hint.slice(0,120);else delete n.lk.h;n.md=Date.now()}
+async function lkRelock(id){if(!KEYS[id])return;await lkFlush();const n=N[id];if(n&&n.lk&&KEYS[id]){n.d='';n.b='';delete n.dw}
+ for(const e of T)if(e.nodes[id]&&e.nodes[id].lk){const x=e.nodes[id];x.d='';x.b='';delete x.dw}
+ delete KEYS[id];delete KRAW[id];delete LKC[id];
+ if(sel==id&&typeof pg!='undefined'){pg.innerHTML=''}
+ WS.forEach(w=>{if(w.note==id&&w.body&&w.body.classList.contains('snap'))lkSnapMask(w)});render()}
+function lkReset(){for(const k in KEYS)delete KEYS[k];for(const k in KRAW)delete KRAW[k];for(const k in LKC)delete LKC[k]}
+function lkSweep(){if(!Object.keys(KEYS).length)return;const vis=new Set(ov.classList.contains('on')?WS.filter(w=>!w.min).map(w=>w.note):[]);let wait=false;
+ for(const id of Object.keys(KEYS)){if(vis.has(id)||LKBUSY.has(id))continue;if((LKG[id]||0)>Date.now()){wait=true;continue}lkRelock(id)}
+ if(wait)setTimeout(lkSweep,700)}
+const lkSweepSoon=()=>setTimeout(lkSweep,0);
+function lkSnapMask(w){w.body.innerHTML='<div class="psp lkm"><b>🔒 Note đã khoá</b><p>Bấm vào cửa sổ này để nhập mật khẩu.</p></div>'}
+// ---- hộp thoại ----
+const lkDlg=$('#lkd');
+function lkModal(o){return new Promise(res=>{
+ $('#lkdt').textContent=o.title;$('#lkdp').textContent=o.msg||'';const f=$('#lkdf');f.innerHTML='';const E=$('#lkde');E.textContent='';
+ const inp={};(o.fields||[]).forEach(d=>{const l=document.createElement('label');l.className='lkl';l.append(d.label);const i=document.createElement('input');i.type=d.type||'password';i.id='lkf_'+d.id;i.placeholder=d.ph||'';i.value=d.val||'';i.autocomplete=d.type=='text'?'off':(d.ac||'off');if(d.ro)i.readOnly=true;i.maxLength=d.max||200;i.spellcheck=false;l.appendChild(i);f.appendChild(l);inp[d.id]=i});
+ const ex=$('#lkdx');ex.innerHTML='';(o.extras||[]).forEach(x=>{const b=document.createElement('button');b.type='button';b.className='lkf';b.textContent=x.label;b.onclick=()=>{if(x.keep){x.fn(vals());return}done({extra:x.ret})};ex.appendChild(b)});
+ const vals=()=>{const v={};for(const k in inp)v[k]=inp[k].value;return v};
+ const ok=$('#lkdy'),no=$('#lkdn');ok.textContent=o.ok||'OK';no.style.display=o.noCancel?'none':'';let busy=false;
+ function done(r){lkDlg.hidden=true;document.removeEventListener('keydown',kd,true);ok.onclick=no.onclick=null;res(r)}
+ async function go(){if(busy)return;busy=true;ok.disabled=true;E.textContent='';try{const v=vals(),er=o.check?await o.check(v):null;if(er){E.textContent=er;busy=false;ok.disabled=false;const fi=Object.values(inp)[0];if(fi&&!fi.readOnly){fi.focus();fi.select()}return}done({ok:true,v})}catch(x){E.textContent='Có lỗi, hãy thử lại.';busy=false;ok.disabled=false}}
+ const kd=e=>{if(e.key=='Escape'&&!o.noCancel){e.preventDefault();e.stopPropagation();done(null)}else if(e.key=='Enter'&&e.target.tagName=='INPUT'&&!e.target.readOnly){e.preventDefault();e.stopPropagation();go()}else if(e.key=='Tab'){const els=[...lkDlg.querySelectorAll('input:not([readonly]),button')].filter(x=>x.offsetParent);if(!els.length)return;const a=document.activeElement,i=els.indexOf(a);if(e.shiftKey&&i<=0){e.preventDefault();els[els.length-1].focus()}else if(!e.shiftKey&&i==els.length-1){e.preventDefault();els[0].focus()}}};
+ document.addEventListener('keydown',kd,true);ok.onclick=go;no.onclick=()=>done(null);lkDlg.hidden=false;ok.disabled=false;
+ const fi=Object.values(inp).find(x=>!x.readOnly);setTimeout(()=>{(fi||ok).focus()},30)})}
+// ---- luồng giao diện ----
+const LKMIN=4;
+async function lkAsk(id){if(!lkHidden(id))return true;if(!lkOk()){flash('Trình duyệt này không hỗ trợ mã hoá (cần https hoặc localhost).',5000);return false}
+ LKBUSY.add(id);try{for(;;){const n=N[id],r=await lkModal({title:'🔒 Note đã khoá',msg:'“'+(n.t||'Chưa đặt tên')+'”'+(n.lk.h?' — Gợi ý: '+n.lk.h:''),fields:[{id:'p',label:'Mật khẩu',ph:'Nhập mật khẩu của note này'}],ok:'Mở khoá',extras:[{label:'Quên mật khẩu?',ret:'forgot'}],
+   check:async v=>{if(!v.p)return'Hãy nhập mật khẩu.';try{await lkUnlockWith(id,'p',v.p);return null}catch(x){return'Sai mật khẩu.'}}});
+  if(!r)return false;if(r.ok){LKG[id]=Date.now()+2500;LKJUST.add(id);render();return true}
+  if(r.extra=='forgot'){const q=await lkModal({title:'Quên mật khẩu',msg:'Nhập mã khôi phục đã lưu khi bạn khoá note, rồi đặt mật khẩu mới. (Mật khẩu cũ không thể xem lại vì được mã hoá một chiều — chỉ có thể đặt mật khẩu mới.)',
+    fields:[{id:'c',label:'Mã khôi phục',type:'text',ph:'XXXX-XXXX-…',max:60},{id:'p',label:'Mật khẩu mới',ph:'Ít nhất '+LKMIN+' ký tự'},{id:'q',label:'Nhập lại mật khẩu mới'}],ok:'Đặt lại và mở khoá',
+    check:async v=>{if(v.p.length<LKMIN)return'Mật khẩu mới cần ít nhất '+LKMIN+' ký tự.';if(v.p!==v.q)return'Hai mật khẩu chưa giống nhau.';try{await lkUnlockWith(id,'r',v.c)}catch(x){return'Mã khôi phục không đúng.'}await lkRewrap(id,v.p,N[id].lk.h||'');return null}});
+   if(q&&q.ok){LKG[id]=Date.now()+2500;LKJUST.add(id);save();render();flash('Đã đặt mật khẩu mới.');return true}}}}finally{LKBUSY.delete(id);setTimeout(lkSweep,3000)}}
+async function lkSetFlow(id){if(RO||!N[id])return;if(!lkOk()){flash('Trình duyệt này không hỗ trợ mã hoá (cần https hoặc localhost).',5000);return}
+ const had=!!N[id].lk;LKBUSY.add(id);try{if(had&&!await lkAsk(id))return;
+  const r=await lkModal({title:had?'Đổi mật khẩu':'Đặt mật khẩu cho note',msg:had?'Nhập mật khẩu mới cho note này.':'Nội dung, tóm tắt và nét vẽ của note sẽ được mã hoá. Tiêu đề vẫn hiện trên cây. Khoá lại ngay khi bạn đóng trang.',
+   fields:[{id:'p',label:'Mật khẩu',ph:'Ít nhất '+LKMIN+' ký tự'},{id:'q',label:'Nhập lại mật khẩu'},{id:'h',label:'Gợi ý mật khẩu (không bắt buộc, ai cũng thấy)',type:'text',ph:'Ví dụ: tên con mèo + năm sinh',val:had?(N[id].lk.h||''):'',max:120}],ok:had?'Đổi mật khẩu':'Khoá note',
+   check:async v=>{if(v.p.length<LKMIN)return'Mật khẩu cần ít nhất '+LKMIN+' ký tự.';if(v.p!==v.q)return'Hai mật khẩu chưa giống nhau.';if(v.h&&v.h.includes(v.p))return'Gợi ý không nên chứa mật khẩu.';return null}});
+  if(!r||!r.ok)return;const{p,h}=r.v;
+  if(had){await lkRewrap(id,p,h);save();flash('Đã đổi mật khẩu.');return}
+  const code=await lkCreate(id,p,h);await lkFlush();save();render();
+  const dl=()=>{const b=new Blob(['Mã khôi phục note “'+(N[id].t||'')+'”\n'+code+'\n\nGiữ mã này ở nơi an toàn. Có mã này là mở được note.\n'],{type:'text/plain'});sv('ma-khoi-phuc-'+id+'.txt',b)};
+  for(;;){const q=await lkModal({title:'Lưu mã khôi phục',msg:'Nếu quên mật khẩu, mã này là cách DUY NHẤT lấy lại note (và để đặt mật khẩu mới). Chỉ hiện một lần — hãy chép hoặc tải về rồi cất kỹ.',fields:[{id:'c',label:'Mã khôi phục',type:'text',val:code,ro:1}],ok:'Tôi đã lưu mã',noCancel:true,
+   extras:[{label:'Sao chép mã',keep:true,fn:()=>{(navigator.clipboard?navigator.clipboard.writeText(code):Promise.reject()).then(()=>flash('Đã sao chép mã khôi phục.'),()=>flash('Không sao chép được, hãy chọn và chép tay.'))}},{label:'Tải về (.txt)',keep:true,fn:dl}]});
+   if(q&&q.ok)break}
+  flash('Đã khoá note.');}finally{LKBUSY.delete(id);setTimeout(lkSweep,0)}}
+async function lkRemoveFlow(id){if(RO||!N[id]||!N[id].lk)return;LKBUSY.add(id);try{if(!await lkAsk(id))return;
+  const r=await lkModal({title:'Bỏ khoá note',msg:'Note sẽ không còn được mã hoá và ai mở cây cũng đọc được.',fields:[],ok:'Bỏ khoá'});if(!r||!r.ok)return;
+  const n=N[id];delete n.lk;delete KEYS[id];delete KRAW[id];delete LKC[id];n.md=Date.now();save();render();flash('Đã bỏ khoá note.')}finally{LKBUSY.delete(id);setTimeout(lkSweep,0)}}
+function lkPanel(){const id=sel,n=id&&N[id];if(!n)return;const h=lkHidden(id);
+ $('#lkset').textContent=n.lk?'🔑 Đổi mật khẩu':'🔒 Đặt mật khẩu';$('#lkrm').style.display=n.lk?'':'none';
+ if(h){$('#pb').value='***';$('#pb').readOnly=true}}
+$('#lkset').onclick=()=>lkSetFlow(sel);$('#lkrm').onclick=()=>lkRemoveFlow(sel);
+// ---- móc vào luồng cũ ----
+function lkSave(){if(typeof save0=='function')save0()}
+const save0=save;save=function(){lkSched();return save0.apply(this,arguments)};
+const panel0=panel;panel=function(){panel0.apply(this,arguments);lkPanel()};
+const openDoc0=openDoc;openDoc=function(id,fresh){if(N[id]&&lkHidden(id)){lkAsk(id).then(ok=>{if(ok)openDoc0(id,fresh)});return}if(N[id]&&KEYS[id])LKG[id]=Date.now()+2500;openDoc0(id,fresh)};
+const wOpenWin0=wOpenWin;wOpenWin=function(id){const w=wById(id);if(w&&lkHidden(w.note)){lkAsk(w.note).then(ok=>{if(ok)wOpenWin0(id)});return}wOpenWin0(id)};
+const wActivate0=wActivate;wActivate=function(w,f){if(LKJUST.has(w.note)){LKJUST.delete(w.note);f=true}if(lkHidden(w.note)){lkAsk(w.note).then(ok=>{if(ok)wActivate0(w,true)});return}wActivate0(w,f);delete LKG[w.note];lkSweepSoon()};
+const wSnapRender0=wSnapRender;wSnapRender=function(w){wSnapRender0.apply(this,arguments);if(lkHidden(w.note))lkSnapMask(w)};
+const wClose0=wClose;wClose=function(w){wClose0.apply(this,arguments);lkSweepSoon()};
+const wMin0=wMin;wMin=function(w){wMin0.apply(this,arguments);lkSweepSoon()};
+const loadState0=loadState;loadState=function(){lkReset();return loadState0.apply(this,arguments)};
+const applyMerge0=applyMerge;applyMerge=function(){const ids=Object.keys(KEYS),keys=Object.assign({},KEYS);applyMerge0.apply(this,arguments);
+ ids.forEach(async id=>{const n=N[id];if(!n||!n.lk){delete KEYS[id];return}try{const p=JSON.parse(LKD.decode(await lkOpen(keys[id],n.lk.c)));n.d=p.d||'';n.b=p.b||'';if(p.dw&&p.dw.length)n.dw=p.dw;else delete n.dw;LKC[id]=lkSig(n);
+  if(sel==id&&ov.classList.contains('on')){pg.innerHTML=clean(n.d||'');refreshImgs();inkDraw(PGX)}render()}catch(x){delete KEYS[id];delete KRAW[id];delete LKC[id]}})};
+new MutationObserver(lkSweepSoon).observe(ov,{attributes:true,attributeFilter:['class']});new MutationObserver(lkSweepSoon).observe(wsp,{childList:true});
+// ===== Kho: cất note đi (ẩn khỏi cây), giữ vô thời hạn; dùng chung mảng T với thùng rác nhưng đánh dấu ar:1 =====
+function stash(id,mode){const n=N[id];if(RO||!n||!n.p)return;let kept=0;
+ if(mode!='one')kept=rescue(id);
+ const p=N[N[id].p],idx=p.c.indexOf(id),e={tid:'t'+Date.now(),at:Date.now(),id,idx,par:p.id,ar:1,nodes:{},lk:[]};
+ if(mode=='one'){const kids=N[id].c.slice();e.nodes[id]=Object.assign({},N[id],{c:[]});e.lk=LK.filter(l=>l.a==id||l.b==id);LK=LK.filter(l=>l.a!=id&&l.b!=id);
+  kids.forEach(c=>{N[c].p=p.id;delete N[c].hid});p.c.splice(idx,1,...kids);delete N[id]}
+ else{const ids=desc(id);ids.forEach(i=>e.nodes[i]=N[i]);e.lk=LK.filter(l=>ids.includes(l.a)||ids.includes(l.b));LK=LK.filter(l=>!ids.includes(l.a)&&!ids.includes(l.b));ids.forEach(i=>delete N[i]);p.c=p.c.filter(c=>c!=id)}
+ T.unshift(e);sel=p.id;render();undoBar(e);if(kept)flash(kept+' note dùng chung được giữ lại ở nhánh khác của chúng.',6000)}
+async function stashAsk(id){const n=N[id];if(RO||!n||!n.p)return;let mode='all';
+ if(n.c.length){const r=await lkModal({title:'Cất vào kho',msg:'“'+(n.t||'Chưa đặt tên')+'” có '+(desc(id).length-1)+' note con. Cất thế nào?',fields:[],ok:'Cất cả nhánh',extras:[{label:'Chỉ cất note này (các con chuyển lên note cha)',ret:'one'}]});
+  if(!r)return;mode=r.extra=='one'?'one':'all'}
+ stash(id,mode)}
+const arTxt=e=>Object.values(e.nodes).map(n=>(n.t||'')+' '+(n.b||'')+' '+(n.d?txt(n.d):'')).join(' ').toLowerCase();
+function arUI(){const q=($('#arq').value||'').trim().toLowerCase(),a=T.filter(e=>e.ar).filter(e=>!q||arTxt(e).includes(q));
+ $('#arl').innerHTML=a.length?a.map(e=>{const r=e.nodes[e.id],c=Object.keys(e.nodes).length;return `<div class="ti"><div><b>${r.lk?'🔒 ':''}${esc(r.t||'Chưa đặt tên')}</b><small>${c} note · cất lúc ${fd(e.at)}</small></div><span class="row"><button class="pill sm" data-r="${esc(e.tid)}">Lấy ra</button><button class="pill sm" data-p="${esc(e.tid)}">Xoá hẳn</button></span></div>`}).join(''):'<p class="mu">'+(q?'Không có note nào khớp.':'Kho trống. Mở bảng note → “⋯ Thao tác” → “📦 Cất vào kho”.')+'</p>';trashLbl()}
+const arOpen=()=>{$('#arq').value='';arUI();$('#ar').classList.add('on');setTimeout(()=>$('#arq').focus(),30)},arClose=()=>$('#ar').classList.remove('on');
+$('#arb').onclick=arOpen;$('#arx').onclick=arClose;$('#ar').addEventListener('pointerdown',e=>{if(e.target==$('#ar'))arClose()});$('#arq').oninput=arUI;
+document.addEventListener('keydown',e=>{if(e.key=='Escape'&&$('#ar').classList.contains('on')&&!$('#cfm').classList.contains('on')){arClose();e.stopImmediatePropagation()}},true);
+$('#arl').onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.r){const t=b.dataset.r;arClose();slide(()=>restore(t));arUI();flash('Đã lấy ra khỏi kho')}
+ else if(b.dataset.p){const t=b.dataset.p,x=T.find(z=>z.tid==t);if(x)askDel('Xoá hẳn "'+(x.nodes[x.id].t||'note')+'" khỏi kho?',()=>{T=T.filter(z=>z.tid!=t);arUI();render()})}};
+$('#arpk').onclick=()=>stashAsk(sel);
+const panel1=panel;panel=function(){panel1.apply(this,arguments);const n=sel&&N[sel];$('#arpk').style.display=n&&n.p?'':'none'};
+trashLbl();
 addEventListener('pagehide',()=>{if(API)saveDraft();else if(!RO&&TID){try{localStorage.setItem(lsKey(),JSON.stringify(snapState()))}catch(x){}}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&API&&!RO){saveView();doPush()}});
 // Đóng tab khi còn thay đổi chưa lên máy chủ: gửi ngay và để trình duyệt hỏi lại người dùng

@@ -1,0 +1,37 @@
+# Giữ cho dự án Supabase (gói miễn phí) không bị tự động "pause" sau ~7 ngày không có hoạt động.
+# Cứ 3 ngày gọi nhẹ vào API + cơ sở dữ liệu một lần. Chạy tay: tab Actions → "Giữ Supabase hoạt động" → Run workflow.
+name: Giữ Supabase hoạt động
+
+on:
+  schedule:
+    - cron: "17 3 */3 * *"   # 03:17 UTC mỗi 3 ngày (lệch phút lẻ để tránh giờ cao điểm của GitHub)
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      # Mặc định lấy đúng URL/key công khai (publishable) đang nằm trong index.html.
+      # Muốn đổi mà không sửa file: đặt Variables/Secrets SUPABASE_URL, SUPABASE_KEY trong Settings → Secrets and variables → Actions.
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL || 'https://axbdxmumaakyqlcolnzd.supabase.co' }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY || vars.SUPABASE_KEY || 'sb_publishable_pE_9euIlEUbBbFQuiyLTCQ_-6C3pmJM' }}
+    steps:
+      - name: Truy vấn bảng trees (chạm vào cơ sở dữ liệu)
+        run: |
+          set -euo pipefail
+          code=$(curl -sS -o /tmp/r1.json -w '%{http_code}' --retry 3 --retry-delay 10 --max-time 30 \
+            -H "apikey: $SUPABASE_KEY" -H "Authorization: Bearer $SUPABASE_KEY" \
+            "$SUPABASE_URL/rest/v1/trees?select=id&limit=1")
+          echo "REST /trees -> HTTP $code"
+          [ "$code" -ge 200 ] && [ "$code" -lt 300 ]
+      - name: Gọi hàm get_shared_tree (truy vấn thứ hai, không cần đăng nhập)
+        run: |
+          set -euo pipefail
+          code=$(curl -sS -o /tmp/r2.json -w '%{http_code}' --retry 3 --retry-delay 10 --max-time 30 \
+            -X POST -H "apikey: $SUPABASE_KEY" -H "Authorization: Bearer $SUPABASE_KEY" -H "Content-Type: application/json" \
+            -d '{"tok":"keep-alive-ping"}' "$SUPABASE_URL/rest/v1/rpc/get_shared_tree")
+          echo "RPC get_shared_tree -> HTTP $code"
+          [ "$code" -ge 200 ] && [ "$code" -lt 300 ]
